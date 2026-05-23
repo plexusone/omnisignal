@@ -1,0 +1,53 @@
+{
+  "irVersion": "1.0",
+  "project": "omnisignal",
+  "repository": "https://github.com/plexusone/omnisignal",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "maintainers": ["plexusone"],
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-05-23",
+      "commit": "4dd585c",
+      "highlights": [
+        { "description": "Unified signal ingestion abstraction for operational intelligence following the omnillm architectural pattern" },
+        { "description": "Built-in thick providers for PagerDuty and Jira with SDK-based implementations" }
+      ],
+      "added": [
+        { "description": "Core `Provider` interface with `Fetch`, `Subscribe`, `Capabilities`, and `Close` methods", "commit": "194d497" },
+        { "description": "`FetchOptions` for filtering signals by time range, status, severity, and provider-specific filters", "commit": "194d497" },
+        { "description": "`SubscribeOptions` for real-time streaming configuration", "commit": "194d497" },
+        { "description": "`Capabilities` struct describing provider features (streaming, batch fetch, filtering, acknowledge)", "commit": "194d497" },
+        { "description": "`Config` struct with `APIKey`, `APISecret`, `BaseURL`, `Timeout`, `RetryMax`, and `Options` fields", "commit": "194d497" },
+        { "description": "Common errors: `ErrNotSupported`, `ErrInvalidConfig`, `ErrAuthentication`, `ErrRateLimited`, `ErrProviderNotFound`", "commit": "194d497" },
+        { "description": "Provider registry with `Register`, `New`, `MustNew`, `List`, `IsRegistered`, `GetPriority` functions", "commit": "8488b6d" },
+        { "description": "Priority-based registration allowing thick providers to override thin providers", "commit": "8488b6d" },
+        { "description": "`Unregister` and `ClearRegistry` functions for testing", "commit": "8488b6d" },
+        { "description": "PagerDuty provider using official `go-pagerduty` SDK", "commit": "e9095d4" },
+        { "description": "PagerDuty incident fetching with pagination, time filtering, status/severity mapping", "commit": "e9095d4" },
+        { "description": "PagerDuty incident normalization to signal-spec `Signal` type", "commit": "e9095d4" },
+        { "description": "Jira provider using `go-jira` community SDK", "commit": "ff331a2" },
+        { "description": "Jira issue fetching via JQL with project, time, status, priority filters", "commit": "ff331a2" },
+        { "description": "Jira issue normalization to signal-spec `Signal` type with component entities and label tags", "commit": "ff331a2" }
+      ],
+      "documentation": [
+        { "description": "README with overview, quick start, provider table, interface docs, and custom provider guide", "commit": "8279975" },
+        { "description": "MkDocs documentation site with PlexusOne theme", "commit": "4dd585c" },
+        { "description": "Getting started guides for installation and quickstart", "commit": "4dd585c" },
+        { "description": "Configuration reference for `Config`, `FetchOptions`, `Capabilities`", "commit": "4dd585c" },
+        { "description": "Provider documentation for PagerDuty and Jira", "commit": "4dd585c" },
+        { "description": "Custom provider implementation guide", "commit": "4dd585c" }
+      ],
+      "dependencies": [
+        { "description": "Add `github.com/PagerDuty/go-pagerduty` v1.8.0 for PagerDuty SDK", "commit": "7339e3b" },
+        { "description": "Add `github.com/andygrunwald/go-jira` v1.17.0 for Jira SDK", "commit": "7339e3b" },
+        { "description": "Add `github.com/plexusone/signal-spec` v0.1.0 for canonical signal types", "commit": "7339e3b" }
+      ],
+      "infrastructure": [
+        { "description": "Add shared CI workflows for build, lint, and test", "commit": "7fc4419" },
+        { "description": "Add MIT license", "commit": "ac311e3" }
+      ]
+    }
+  ]
+}

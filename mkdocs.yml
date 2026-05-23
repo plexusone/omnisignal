@@ -55,6 +55,9 @@ nav:
       - Jira: providers/jira.md
   - Extending: extending.md
   - API Reference: https://pkg.go.dev/github.com/plexusone/omnisignal
+  - Releases:
+      - Changelog: releases/changelog.md
+      - v0.1.0: releases/v0.1.0.md
 
 extra:
   social:
