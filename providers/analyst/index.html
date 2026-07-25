@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omnisignal/providers/jira/">
+        <link rel="canonical" href="https://plexusone.github.io/omnisignal/providers/analyst/">
       
       
-        <link rel="prev" href="../pagerduty/">
+        <link rel="prev" href="../jira/">
       
       
-        <link rel="next" href="../analyst/">
+        <link rel="next" href="../competitive/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Jira - OmniSignal</title>
+        <title>Analyst - OmniSignal</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#jira-provider" class="md-skip">
+        <a href="#analyst-provider" class="md-skip">
           Skip to content
         </a>
       
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Jira
+              Analyst
             
           </span>
         </div>
@@ -546,6 +546,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../jira/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jira
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -565,7 +593,7 @@
   <span class="md-ellipsis">
     
   
-    Jira
+    Analyst
   
 
     
@@ -583,7 +611,7 @@
   <span class="md-ellipsis">
     
   
-    Jira
+    Analyst
   
 
     
@@ -632,32 +660,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#required-fields" class="md-nav__link">
+  <a href="#options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Required Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Optional Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getting-an-api-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting an API Token
+        Options
       
     </span>
   </a>
@@ -670,10 +676,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#capabilities" class="md-nav__link">
+  <a href="#adapter-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capabilities
+        Adapter Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Type
       
     </span>
   </a>
@@ -693,10 +710,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fetch-recent-issues" class="md-nav__link">
+  <a href="#manual-ingestion-via-memoryadapter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fetch Recent Issues
+        Manual Ingestion via MemoryAdapter
       
     </span>
   </a>
@@ -704,32 +721,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#filter-by-status" class="md-nav__link">
+  <a href="#fetch-with-time-filters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Filter by Status
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-by-severity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter by Severity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-jql-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom JQL Filter
+        Fetch with Time Filters
       
     </span>
   </a>
@@ -754,17 +749,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#status-mapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Status Mapping
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#metadata" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -781,10 +765,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#entities" class="md-nav__link">
+  <a href="#capabilities" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Entities
+        Capabilities
       
     </span>
   </a>
@@ -792,10 +776,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tags" class="md-nav__link">
+  <a href="#raw-vs-curated" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tags
+        Raw vs. Curated
       
     </span>
   </a>
@@ -817,34 +801,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../analyst/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Analyst
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1279,32 +1235,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#required-fields" class="md-nav__link">
+  <a href="#options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Required Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#optional-fields" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Optional Fields
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#getting-an-api-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Getting an API Token
+        Options
       
     </span>
   </a>
@@ -1317,10 +1251,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#capabilities" class="md-nav__link">
+  <a href="#adapter-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capabilities
+        Adapter Interface
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finding-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Type
       
     </span>
   </a>
@@ -1340,10 +1285,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#fetch-recent-issues" class="md-nav__link">
+  <a href="#manual-ingestion-via-memoryadapter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fetch Recent Issues
+        Manual Ingestion via MemoryAdapter
       
     </span>
   </a>
@@ -1351,32 +1296,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#filter-by-status" class="md-nav__link">
+  <a href="#fetch-with-time-filters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Filter by Status
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#filter-by-severity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Filter by Severity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#custom-jql-filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom JQL Filter
+        Fetch with Time Filters
       
     </span>
   </a>
@@ -1401,17 +1324,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#status-mapping" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Status Mapping
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#metadata" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1428,10 +1340,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#entities" class="md-nav__link">
+  <a href="#capabilities" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Entities
+        Capabilities
       
     </span>
   </a>
@@ -1439,10 +1351,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tags" class="md-nav__link">
+  <a href="#raw-vs-curated" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tags
+        Raw vs. Curated
       
     </span>
   </a>
@@ -1480,284 +1392,203 @@
   
 
 
-<h1 id="jira-provider">Jira Provider<a class="headerlink" href="#jira-provider" title="Permanent link">&para;</a></h1>
-<p>The Jira provider fetches issues from Jira using the <a href="https://github.com/andygrunwald/go-jira">go-jira</a> community SDK.</p>
+<h1 id="analyst-provider">Analyst Provider<a class="headerlink" href="#analyst-provider" title="Permanent link">&para;</a></h1>
+<p>The Analyst provider ingests analyst findings from research firms (Gartner, Forrester, IDC) and normalizes them to signals that reference <a href="https://github.com/ProductBuildersHQ/market-spec">MarketSpec</a> entities.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>The Jira provider is built into omnisignal:</p>
+<p>The Analyst provider is built into omnisignal:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omnisignal&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal/provider/jira&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal/provider/analyst&quot;</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">)</span>
 </code></pre></div>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;jira&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">BaseURL</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;https://company.atlassian.net&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">APIKey</span><span class="p">:</span><span class="w">    </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;JIRA_USER&quot;</span><span class="p">),</span><span class="w">    </span><span class="c1">// Username/email</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">APISecret</span><span class="p">:</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;JIRA_TOKEN&quot;</span><span class="p">),</span><span class="w">   </span><span class="c1">// API token</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">Options</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="s">&quot;projects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;INFRA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SUPPORT&quot;</span><span class="p">},</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;analyst&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">Options</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="s">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gartner&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// or &quot;forrester&quot;, &quot;idc&quot;, &quot;custom&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">})</span>
 </code></pre></div>
-<h3 id="required-fields">Required Fields<a class="headerlink" href="#required-fields" title="Permanent link">&para;</a></h3>
+<h3 id="options">Options<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Field</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>BaseURL</code></td>
-<td>Jira instance URL (e.g., <code>https://company.atlassian.net</code>)</td>
+<td><code>Options["source"]</code></td>
+<td>No</td>
+<td>Analyst firm identifier: <code>gartner</code>, <code>forrester</code>, <code>idc</code>, or <code>custom</code> (default)</td>
 </tr>
 <tr>
-<td><code>APIKey</code></td>
-<td>Username or email address</td>
+<td><code>Options["adapter"]</code></td>
+<td>No</td>
+<td>A custom <code>analyst.Adapter</code> implementation. Defaults to an empty <code>MemoryAdapter</code></td>
 </tr>
 <tr>
-<td><code>APISecret</code></td>
-<td>API token</td>
+<td><code>Options[omnisignal.OptMarketMappings]</code></td>
+<td>No</td>
+<td><code>map[string]string</code> mapping source categories to <code>market:</code> refs</td>
 </tr>
 </tbody>
 </table>
-<h3 id="optional-fields">Optional Fields<a class="headerlink" href="#optional-fields" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Options["projects"]</code></td>
-<td>List of project keys to filter (e.g., <code>["INFRA", "SUPPORT"]</code>)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="getting-an-api-token">Getting an API Token<a class="headerlink" href="#getting-an-api-token" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Log in to <a href="https://id.atlassian.com/manage-profile/security/api-tokens">Atlassian Account</a></li>
-<li>Click <strong>Create API token</strong></li>
-<li>Use your email as <code>APIKey</code> and the token as <code>APISecret</code></li>
-</ol>
-<h2 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">caps</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">Capabilities</span><span class="p">()</span>
+<p>The default in-process adapter is <code>analyst.MemoryAdapter</code>, which is useful for testing and for manually-curated finding ingestion. Production integrations should implement the <code>analyst.Adapter</code> interface against a firm's API or export format and pass it via <code>Options["adapter"]</code>.</p>
+<h2 id="adapter-interface">Adapter Interface<a class="headerlink" href="#adapter-interface" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Adapter</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="c1">// Fetch retrieves findings from the source.</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">Fetch</span><span class="p">(</span><span class="nx">ctx</span><span class="w"> </span><span class="nx">context</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span><span class="w"> </span><span class="nx">opts</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">FetchOptions</span><span class="p">)</span><span class="w"> </span><span class="p">([]</span><span class="nx">Finding</span><span class="p">,</span><span class="w"> </span><span class="kt">error</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="c1">// Source returns the adapter&#39;s source identifier.</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">Source</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
 </code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Capability</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SupportsStreaming</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>SupportsBatchFetch</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>SupportsFiltering</code></td>
-<td><code>true</code></td>
-</tr>
-<tr>
-<td><code>SupportsAcknowledge</code></td>
-<td><code>false</code></td>
-</tr>
-<tr>
-<td><code>MaxBatchSize</code></td>
-<td>100</td>
-</tr>
-<tr>
-<td><code>RateLimitPerMinute</code></td>
-<td>varies by instance</td>
-</tr>
-<tr>
-<td><code>SignalTypes</code></td>
-<td><code>support_ticket</code>, <code>feedback</code></td>
-</tr>
-</tbody>
-</table>
+<h2 id="finding-type">Finding Type<a class="headerlink" href="#finding-type" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">type</span><span class="w"> </span><span class="nx">Finding</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">ID</span><span class="w">          </span><span class="kt">string</span><span class="w">            </span><span class="c1">// Unique identifier for this finding</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">ReportID</span><span class="w">    </span><span class="kt">string</span><span class="w">            </span><span class="c1">// MarketSpec report identifier (e.g., &quot;gartner-mq-iam-2026&quot;)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">Title</span><span class="w">       </span><span class="kt">string</span><span class="w">            </span><span class="c1">// Brief summary of the finding</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">Description</span><span class="w"> </span><span class="kt">string</span><span class="w">            </span><span class="c1">// Full finding text</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">Category</span><span class="w">    </span><span class="kt">string</span><span class="w">            </span><span class="c1">// &quot;capability_gap&quot;, &quot;market_trend&quot;, &quot;competitive_position&quot;, etc.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nx">Source</span><span class="w">      </span><span class="kt">string</span><span class="w">            </span><span class="c1">// Analyst firm (e.g., &quot;gartner&quot;, &quot;forrester&quot;)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nx">Severity</span><span class="w">    </span><span class="nx">common</span><span class="p">.</span><span class="nx">Severity</span><span class="w">   </span><span class="c1">// Impact level</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nx">Markets</span><span class="w">     </span><span class="p">[]</span><span class="kt">string</span><span class="w">          </span><span class="c1">// MarketSpec market slugs this finding applies to</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nx">Competitors</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="w">          </span><span class="c1">// MarketSpec competitor slugs mentioned</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nx">PublishedAt</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w">         </span><span class="c1">// When the report was published</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nx">Metadata</span><span class="w">    </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="w">    </span><span class="c1">// Additional source-specific fields</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+</code></pre></div>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
-<h3 id="fetch-recent-issues">Fetch Recent Issues<a class="headerlink" href="#fetch-recent-issues" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">signals</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">Fetch</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">FetchOptions</span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">Since</span><span class="p">:</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">Add</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Hour</span><span class="p">),</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">})</span>
+<h3 id="manual-ingestion-via-memoryadapter">Manual Ingestion via MemoryAdapter<a class="headerlink" href="#manual-ingestion-via-memoryadapter" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">adapter</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">analyst</span><span class="p">.</span><span class="nx">NewMemoryAdapter</span><span class="p">(</span><span class="s">&quot;gartner&quot;</span><span class="p">,</span><span class="w"> </span><span class="kc">nil</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">adapter</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="nx">analyst</span><span class="p">.</span><span class="nx">Finding</span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">ID</span><span class="p">:</span><span class="w">          </span><span class="s">&quot;mq-iam-2026-passwordless&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nx">ReportID</span><span class="p">:</span><span class="w">    </span><span class="s">&quot;gartner-mq-iam-2026&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nx">Title</span><span class="p">:</span><span class="w">       </span><span class="s">&quot;Passwordless authentication now table stakes&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nx">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Vendors lacking native FIDO2/WebAuthn support are losing evaluations.&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nx">Category</span><span class="p">:</span><span class="w">    </span><span class="s">&quot;capability_gap&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nx">Severity</span><span class="p">:</span><span class="w">    </span><span class="nx">common</span><span class="p">.</span><span class="nx">SeverityHigh</span><span class="p">,</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nx">Markets</span><span class="p">:</span><span class="w">     </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;identity-governance&quot;</span><span class="p">},</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nx">Competitors</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;okta&quot;</span><span class="p">},</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="nx">PublishedAt</span><span class="p">:</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">(),</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">})</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;analyst&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="nx">Options</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="s">&quot;source&quot;</span><span class="p">:</span><span class="w">  </span><span class="s">&quot;gartner&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="s">&quot;adapter&quot;</span><span class="p">:</span><span class="w"> </span><span class="nx">adapter</span><span class="p">,</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="p">})</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="nx">signals</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">Fetch</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">FetchOptions</span><span class="p">{})</span>
 </code></pre></div>
-<h3 id="filter-by-status">Filter by Status<a class="headerlink" href="#filter-by-status" title="Permanent link">&para;</a></h3>
-<p>Use Jira status names:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">signals</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">Fetch</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">FetchOptions</span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nx">Since</span><span class="p">:</span><span class="w">    </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">Add</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Hour</span><span class="p">),</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nx">Statuses</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;Open&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;In Progress&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;In Review&quot;</span><span class="p">},</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">})</span>
-</code></pre></div>
-<h3 id="filter-by-severity">Filter by Severity<a class="headerlink" href="#filter-by-severity" title="Permanent link">&para;</a></h3>
-<p>Severity maps to Jira priority:</p>
-<table>
-<thead>
-<tr>
-<th>OmniSignal</th>
-<th>Jira Priorities</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>critical</code></td>
-<td>Highest, Blocker</td>
-</tr>
-<tr>
-<td><code>high</code></td>
-<td>High</td>
-</tr>
-<tr>
-<td><code>medium</code></td>
-<td>Medium, Normal</td>
-</tr>
-<tr>
-<td><code>low</code></td>
-<td>Low</td>
-</tr>
-<tr>
-<td><code>info</code></td>
-<td>Lowest, Trivial</td>
-</tr>
-</tbody>
-</table>
+<h3 id="fetch-with-time-filters">Fetch with Time Filters<a class="headerlink" href="#fetch-with-time-filters" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nx">signals</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">Fetch</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">FetchOptions</span><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">Since</span><span class="p">:</span><span class="w">      </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">Add</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Hour</span><span class="p">),</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">Severities</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;critical&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;high&quot;</span><span class="p">},</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nx">Since</span><span class="p">:</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">Add</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Hour</span><span class="p">),</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nx">Limit</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">})</span>
 </code></pre></div>
-<h3 id="custom-jql-filter">Custom JQL Filter<a class="headerlink" href="#custom-jql-filter" title="Permanent link">&para;</a></h3>
-<p>Use the <code>jql</code> filter for advanced queries:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">signals</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">provider</span><span class="p">.</span><span class="nx">Fetch</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">FetchOptions</span><span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">Since</span><span class="p">:</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">Add</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">24</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Hour</span><span class="p">),</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">Filters</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span><span class="p">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="s">&quot;jql&quot;</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;labels = incident AND component = api&quot;</span><span class="p">,</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">})</span>
-</code></pre></div>
+<p><code>MemoryAdapter.Fetch</code> filters findings by <code>PublishedAt</code> against <code>Since</code>/<code>Until</code> and honors <code>Limit</code>.</p>
 <h2 id="signal-mapping">Signal Mapping<a class="headerlink" href="#signal-mapping" title="Permanent link">&para;</a></h2>
-<p>Jira issues are normalized to signals:</p>
+<p>Findings are normalized to <code>signal.TypeAnalystFinding</code>:</p>
 <table>
 <thead>
 <tr>
+<th>Finding Field</th>
 <th>Signal Field</th>
-<th>Jira Source</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><code>analyst-{Source}-{ID}</code></td>
 <td><code>ID</code></td>
-<td><code>jira-{issue.Key}</code></td>
 </tr>
 <tr>
-<td><code>Type</code></td>
-<td><code>support_ticket</code></td>
+<td><code>Source</code>, <code>ReportID</code>, <code>Category</code></td>
+<td><code>Source</code> (<code>common.SourceSystem{Type: "analyst", Name: Source}</code>)</td>
 </tr>
 <tr>
-<td><code>Status</code></td>
-<td>Mapped from issue status</td>
-</tr>
-<tr>
-<td><code>Severity</code></td>
-<td>Mapped from priority</td>
-</tr>
-<tr>
+<td><code>Title</code></td>
 <td><code>Summary</code></td>
-<td><code>issue.Fields.Summary</code></td>
 </tr>
 <tr>
 <td><code>Description</code></td>
-<td><code>issue.Fields.Description</code></td>
+<td><code>Description</code></td>
 </tr>
 <tr>
+<td><code>Severity</code></td>
+<td><code>Severity</code></td>
+</tr>
+<tr>
+<td><code>"market"</code> / <code>Category</code></td>
+<td><code>Domain.Name</code> / <code>Domain.Subdomain</code></td>
+</tr>
+<tr>
+<td><code>PublishedAt</code> (or now if zero)</td>
 <td><code>ObservedAt</code></td>
-<td><code>issue.Fields.Created</code></td>
-</tr>
-<tr>
-<td><code>Source.URL</code></td>
-<td><code>{BaseURL}/browse/{issue.Key}</code></td>
-</tr>
-<tr>
-<td><code>Source.ExternalID</code></td>
-<td><code>issue.Key</code></td>
-</tr>
-<tr>
-<td><code>Domain.Name</code></td>
-<td>Project key (lowercase)</td>
-</tr>
-<tr>
-<td><code>Domain.Subdomain</code></td>
-<td>Issue type (normalized)</td>
-</tr>
-<tr>
-<td><code>Tags</code></td>
-<td>Labels (kebab-case only)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="status-mapping">Status Mapping<a class="headerlink" href="#status-mapping" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Jira Status</th>
-<th>Signal Status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Contains "done", "closed", "resolved"</td>
-<td><code>archived</code></td>
-</tr>
-<tr>
-<td>Contains "progress", "review"</td>
-<td><code>processing</code></td>
-</tr>
-<tr>
-<td>Other</td>
-<td><code>new</code></td>
 </tr>
 </tbody>
 </table>
 <h3 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h3>
-<p>Provider-specific data in <code>signal.Metadata</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">metadata</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signal</span><span class="p">.</span><span class="nx">Metadata</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">issueType</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">metadata</span><span class="p">[</span><span class="s">&quot;jira_issue_type&quot;</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="nx">project</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">metadata</span><span class="p">[</span><span class="s">&quot;jira_project&quot;</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nx">status</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">metadata</span><span class="p">[</span><span class="s">&quot;jira_status&quot;</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="nx">priority</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">metadata</span><span class="p">[</span><span class="s">&quot;jira_priority&quot;</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nx">reporter</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">metadata</span><span class="p">[</span><span class="s">&quot;jira_reporter&quot;</span><span class="p">].(</span><span class="kt">string</span><span class="p">)</span>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>analyst_source</code></td>
+<td>Analyst firm identifier</td>
+</tr>
+<tr>
+<td><code>analyst_category</code></td>
+<td>Finding category</td>
+</tr>
+<tr>
+<td><code>analyst_report_id</code></td>
+<td>Raw report identifier</td>
+</tr>
+<tr>
+<td><code>signal.MetaAnalystReportRef</code></td>
+<td>Typed ref <code>analyst-report:{ReportID}</code></td>
+</tr>
+<tr>
+<td><code>signal.MetaMarketRef</code></td>
+<td>Typed ref <code>market:{slug}</code> (single market)</td>
+</tr>
+<tr>
+<td><code>market_refs</code></td>
+<td><code>[]string</code> of typed market refs (multiple markets)</td>
+</tr>
+<tr>
+<td><code>signal.MetaCompetitorRef</code></td>
+<td>Typed ref <code>competitor:{slug}</code> (single competitor)</td>
+</tr>
+<tr>
+<td><code>competitor_refs</code></td>
+<td><code>[]string</code> of typed competitor refs (multiple competitors)</td>
+</tr>
+</tbody>
+</table>
+<p>Any additional fields set on <code>Finding.Metadata</code> are copied through to <code>signal.Metadata</code> unchanged.</p>
+<h2 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">Capabilities</span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nx">SupportsStreaming</span><span class="p">:</span><span class="w">  </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nx">SupportsBatchFetch</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">SupportsFiltering</span><span class="p">:</span><span class="w">  </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">SignalTypes</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="nx">signal</span><span class="p">.</span><span class="nx">Type</span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">TypeAnalystFinding</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="entities">Entities<a class="headerlink" href="#entities" title="Permanent link">&para;</a></h2>
-<p>Components are extracted as entities:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">for</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">entity</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="k">range</span><span class="w"> </span><span class="nx">signal</span><span class="p">.</span><span class="nx">Entities</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">entity</span><span class="p">.</span><span class="nx">Type</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;component&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Component: %s (ID: %s)\n&quot;</span><span class="p">,</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">            </span><span class="nx">entity</span><span class="p">.</span><span class="nx">Name</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">            </span><span class="nx">entity</span><span class="p">.</span><span class="nx">Attributes</span><span class="p">[</span><span class="s">&quot;jira_id&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">        </span><span class="p">)</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">}</span>
-</code></pre></div>
-<h2 id="tags">Tags<a class="headerlink" href="#tags" title="Permanent link">&para;</a></h2>
-<p>Jira labels are converted to tags if they are valid kebab-case:</p>
-<ul>
-<li><code>incident</code> → included</li>
-<li><code>high-priority</code> → included</li>
-<li><code>HighPriority</code> → excluded (not kebab-case)</li>
-<li><code>has spaces</code> → excluded (not kebab-case)</li>
-</ul>
+<h2 id="raw-vs-curated">Raw vs. Curated<a class="headerlink" href="#raw-vs-curated" title="Permanent link">&para;</a></h2>
+<p>Analyst findings are treated as curated signals — they represent a single, already-vetted finding rather than raw events to be clustered. See <a href="../../metadata-conventions/#derived-metrics-not-metadata">Raw vs. Curated Signals</a> and the <a href="../../prism-roadmap-handoff/">PRISM-Roadmap handoff guide</a> for how analyst findings contribute to TAM/SAM-SOM pillar scoring.</p>
 <h2 id="streaming">Streaming<a class="headerlink" href="#streaming" title="Permanent link">&para;</a></h2>
-<p>Jira doesn't support real-time streaming via API. The <code>Subscribe()</code> method returns <code>ErrNotSupported</code>.</p>
-<p>For real-time updates, configure <a href="https://developer.atlassian.com/server/jira/platform/webhooks/">Jira Webhooks</a> to push events to your application.</p>
+<p>The Analyst provider doesn't support real-time streaming. <code>Subscribe()</code> returns <code>omnisignal.ErrNotSupported</code>.</p>
 
 
 

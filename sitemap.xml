@@ -37,6 +37,14 @@
          <lastmod>2026-07-25</lastmod>
     </url>
     <url>
+         <loc>https://plexusone.github.io/omnisignal/providers/analyst/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/providers/competitive/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
          <loc>https://plexusone.github.io/omnisignal/providers/jira/</loc>
          <lastmod>2026-07-25</lastmod>
     </url>
@@ -50,6 +58,10 @@
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/releases/v0.1.0/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/releases/v0.2.0/</loc>
          <lastmod>2026-07-25</lastmod>
     </url>
     <url>
