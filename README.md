@@ -81,12 +81,15 @@ func main() {
 |----------|------|-------------|-----|
 | PagerDuty | Alerting | `omnisignal/provider/pagerduty` | [go-pagerduty](https://github.com/PagerDuty/go-pagerduty) |
 | Jira | Ticketing | `omnisignal/provider/jira` | [go-jira](https://github.com/andygrunwald/go-jira) |
+| [Analyst](docs/providers/analyst.md) | Market Intelligence | `omnisignal/provider/analyst` | none (thin) |
+| [Competitive](docs/providers/competitive.md) | Market Intelligence | `omnisignal/provider/competitive` | none (thin) |
 
 ### External Providers (Thick)
 
 | Provider | Type | Import Path | SDK |
 |----------|------|-------------|-----|
 | New Relic | Monitoring | `omni-newrelic/omnisignal` | [newrelic-client-go](https://github.com/newrelic/newrelic-client-go) |
+| [Aha](docs/providers/aha.md) | Product Feedback | `grokify/aha-studio/omnisignal` | [aha-go](https://github.com/grokify/aha-go) |
 
 ### Planned Providers
 
@@ -164,6 +167,47 @@ omnisignal.Config{
 }
 ```
 
+**Analyst** (Gartner, Forrester, IDC — see [docs](docs/providers/analyst.md)):
+```go
+omnisignal.Config{
+    Options: map[string]any{
+        "source": "gartner", // or "forrester", "idc", "custom"
+    },
+}
+```
+
+**Competitive** (win/loss and gaps from CRM — see [docs](docs/providers/competitive.md)):
+```go
+omnisignal.Config{
+    Options: map[string]any{
+        "source":              "salesforce", // or "hubspot", "clari", "gong", "custom"
+        "competitor_mappings": map[string]string{"Okta Inc": "competitor:okta"},
+        omnisignal.OptCustomerMappings: map[string]string{"Acme Corp": "customer:acme-001"},
+        omnisignal.OptMarketMappings:   map[string]string{"IAM": "market:identity-governance"},
+    },
+}
+```
+
+### Config Helpers
+
+`Config` provides typed accessors for reading provider `Options`:
+
+```go
+func (c Config) GetOption(key string, defaultVal any) any
+func (c Config) GetStringOption(key, defaultVal string) string
+func (c Config) GetStringMap(key string) map[string]string
+```
+
+`GetStringMap` accepts both `map[string]string` and `map[string]any` (with string values), which makes it safe to use with config loaded from JSON/YAML as well as Go literals.
+
+Well-known option keys carry cross-repo reference mappings from source system values (e.g., organization names) to [MarketSpec](https://github.com/ProductBuildersHQ/market-spec) typed refs (e.g., `customer:acme-001`):
+
+| Constant | Key | Maps |
+|----------|-----|------|
+| `OptCustomerMappings` | `customer_mappings` | Organization/account names → customer refs |
+| `OptCapabilityMappings` | `capability_mappings` | Components/labels → capability refs |
+| `OptMarketMappings` | `market_mappings` | Categories → market refs |
+
 ## Fetch Options
 
 ```go
@@ -237,6 +281,86 @@ func (p *Provider) Capabilities() omnisignal.Capabilities {
 
 func (p *Provider) Close() error { return nil }
 ```
+
+## Curated Signals
+
+Some sources (e.g., Aha Ideas, analyst findings, competitive deals) already represent a single aggregated data point rather than a raw event stream. Mark these signals as **curated** so the [consolidation pipeline](#consolidation-pipeline) skips clustering and maps them directly to root causes:
+
+```go
+sig.Metadata[omnisignal.MetaCurated] = true
+
+// Or use the helper to check:
+if omnisignal.IsCurated(sig.Metadata) {
+    // Skip clustering, map directly to a canonical signal
+}
+```
+
+See [Metadata Conventions](docs/metadata-conventions.md#raw-vs-curated-signals) for the full raw vs. curated model.
+
+## Metrics Engine
+
+The `metrics` package computes derived scores from signal sets via a pluggable formula registry:
+
+```go
+import "github.com/plexusone/omnisignal/metrics"
+
+// Built-in formulas: frustration, momentum, reach, urgency
+result, err := metrics.Compute(ctx, "frustration", signals, metrics.Options{
+    Weights: map[string]float64{"support_ticket": 1.5},
+})
+
+// Or run every registered formula at once
+results, errs := metrics.ComputeAll(ctx, signals, metrics.Options{})
+```
+
+| Formula | Description |
+|---------|-------------|
+| `frustration` | Weighted signal count multiplied by the age (in days) of the oldest signal |
+| `momentum` | Count of signals observed within a trailing window (default 30 days) |
+| `reach` | Count of distinct customer references across all signals |
+| `urgency` | Sum of severity-weighted signal counts |
+
+Weight overrides and window size can be loaded from JSON config and merged:
+
+```go
+cfg, err := metrics.LoadConfig("metrics.json")
+merged := defaultCfg.Merge(cfg)
+result, err := metrics.Compute(ctx, "urgency", signals, merged.ToOptions())
+```
+
+Custom formulas can be added via `metrics.Register(metrics.NewFormula(name, description, computeFn))`.
+
+## Consolidation Pipeline
+
+The `consolidate` package groups related raw signals into canonical root causes through a 5-stage pipeline: **embed → cluster → summarize → review → attach**.
+
+```go
+import "github.com/plexusone/omnisignal/consolidate"
+
+pipeline := consolidate.NewPipeline(
+    consolidate.WithEmbedder(consolidate.NewOmniLLMEmbedder(omnillmClient, consolidate.EmbedderConfig{
+        Model: "text-embedding-3-small",
+    })),
+    consolidate.WithSummarizer(consolidate.NewLLMSummarizer(omnillmClient, consolidate.SummarizerConfig{
+        Model: "gpt-4o-mini",
+    })),
+    consolidate.WithReviewer(consolidate.NewMemoryReviewer(consolidate.ReviewConfig{
+        AutoApproveThreshold: 5,
+    })),
+    consolidate.WithSimilarityThreshold(0.85),
+)
+
+result, err := pipeline.Process(ctx, signals)
+// result.RootCauses, result.Clusters, result.Attached, result.Stats
+```
+
+- **Embed** — `Embedder` generates vector embeddings via OmniLLM (`OmniLLMEmbedder`)
+- **Cluster** — signals are grouped by cosine similarity (`Clusterer`, `IncrementalClusterer`)
+- **Summarize** — an LLM generates a root cause title, description, and symptom patterns per cluster (`LLMSummarizer`)
+- **Review** — optional human review queue with approve/reject and auto-approve threshold (`MemoryReviewer`)
+- **Attach** — new signals are linked to existing root causes incrementally via `Pipeline.Attach`
+
+[Curated signals](#curated-signals) skip embedding and clustering and map directly to root causes, preserving their existing aggregation.
 
 ## Related Packages
 
