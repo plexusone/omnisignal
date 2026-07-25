@@ -25,6 +25,9 @@ package omnisignal
 import (
 	"context"
 	"errors"
+	"fmt"
+	"net/http"
+	"strings"
 	"time"
 
 	"github.com/plexusone/signal-spec/pkg/signal"
@@ -38,6 +41,45 @@ var (
 	ErrRateLimited      = errors.New("rate limited by provider")
 	ErrProviderNotFound = errors.New("provider not found in registry")
 )
+
+// WrapHTTPError wraps an error based on HTTP status code, returning a
+// sentinel error (ErrAuthentication, ErrRateLimited) where appropriate.
+// If resp is nil or the status doesn't match a sentinel, returns the
+// original error wrapped with context.
+func WrapHTTPError(err error, resp *http.Response, context string) error {
+	if err == nil {
+		return nil
+	}
+	if resp != nil {
+		switch resp.StatusCode {
+		case http.StatusUnauthorized, http.StatusForbidden:
+			return fmt.Errorf("%s: %w: %v", context, ErrAuthentication, err)
+		case http.StatusTooManyRequests:
+			return fmt.Errorf("%s: %w: %v", context, ErrRateLimited, err)
+		}
+	}
+	return fmt.Errorf("%s: %w", context, err)
+}
+
+// WrapErrorByMessage wraps an error based on error message patterns when
+// HTTP response is not available. Detects auth and rate-limit errors from
+// common error message patterns.
+func WrapErrorByMessage(err error, context string) error {
+	if err == nil {
+		return nil
+	}
+	msg := strings.ToLower(err.Error())
+	if strings.Contains(msg, "401") || strings.Contains(msg, "403") ||
+		strings.Contains(msg, "unauthorized") || strings.Contains(msg, "forbidden") ||
+		strings.Contains(msg, "authentication") || strings.Contains(msg, "invalid token") {
+		return fmt.Errorf("%s: %w: %v", context, ErrAuthentication, err)
+	}
+	if strings.Contains(msg, "429") || strings.Contains(msg, "rate limit") ||
+		strings.Contains(msg, "too many requests") || strings.Contains(msg, "throttl") {
+		return fmt.Errorf("%s: %w: %v", context, ErrRateLimited, err)
+	}
+	return fmt.Errorf("%s: %w", context, err)
+}
 
 // Provider defines the interface for signal ingestion providers.
 //
@@ -166,4 +208,60 @@ func (c Config) GetStringOption(key, defaultVal string) string {
 		return s
 	}
 	return defaultVal
+}
+
+// GetStringMap retrieves a map[string]string option.
+// Handles both map[string]string and map[string]any with string values.
+func (c Config) GetStringMap(key string) map[string]string {
+	val := c.GetOption(key, nil)
+	if val == nil {
+		return nil
+	}
+	if m, ok := val.(map[string]string); ok {
+		return m
+	}
+	if m, ok := val.(map[string]any); ok {
+		result := make(map[string]string, len(m))
+		for k, v := range m {
+			if s, ok := v.(string); ok {
+				result[k] = s
+			}
+		}
+		return result
+	}
+	return nil
+}
+
+// Well-known config option keys for cross-repo reference mappings.
+// These map source system values to typed refs (e.g., "Acme Corp" → "customer:acme-001").
+const (
+	// OptCustomerMappings maps organization/account names to customer refs.
+	OptCustomerMappings = "customer_mappings"
+	// OptCapabilityMappings maps components/labels to capability refs.
+	OptCapabilityMappings = "capability_mappings"
+	// OptMarketMappings maps categories to market refs.
+	OptMarketMappings = "market_mappings"
+)
+
+// Well-known metadata keys for signal classification.
+const (
+	// MetaCurated indicates a pre-consolidated signal that should skip
+	// the clustering stage of the consolidation pipeline. Use for signals
+	// from sources that already aggregate user feedback (e.g., Aha Ideas
+	// with votes and watchers). Value: bool.
+	MetaCurated = "curated"
+)
+
+// IsCurated checks if a signal is marked as curated (pre-consolidated).
+// Curated signals should skip clustering and map directly to canonical signals.
+func IsCurated(metadata map[string]any) bool {
+	if metadata == nil {
+		return false
+	}
+	v, ok := metadata[MetaCurated]
+	if !ok {
+		return false
+	}
+	b, ok := v.(bool)
+	return ok && b
 }
