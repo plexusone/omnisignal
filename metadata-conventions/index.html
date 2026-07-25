@@ -10,31 +10,27 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omnisignal/getting-started/installation/">
+        <link rel="canonical" href="https://plexusone.github.io/omnisignal/metadata-conventions/">
       
       
-        <link rel="prev" href="../..">
-      
-      
-        <link rel="next" href="../quickstart/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Installation - OmniSignal</title>
+        <title>Signal Metadata Conventions - OmniSignal</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +51,7 @@
     
       <link rel="stylesheet" href="https://plexusone.dev/css/plexusone-mkdocs.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#installation" class="md-skip">
+        <a href="#signal-metadata-conventions" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +97,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="OmniSignal" class="md-header__button md-logo" aria-label="OmniSignal" data-md-component="logo">
+    <a href=".." title="OmniSignal" class="md-header__button md-logo" aria-label="OmniSignal" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -121,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Installation
+              Signal Metadata Conventions
             
           </span>
         </div>
@@ -238,7 +234,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="OmniSignal" class="md-nav__button md-logo" aria-label="OmniSignal" data-md-component="logo">
+    <a href=".." title="OmniSignal" class="md-nav__button md-logo" aria-label="OmniSignal" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -268,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -292,8 +288,6 @@
       
   
   
-    
-  
   
   
     
@@ -306,11 +300,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -331,7 +327,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -346,37 +342,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Installation
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -392,109 +361,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-the-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install the Package
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Import Providers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Providers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Available Providers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#built-in-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Built-in Providers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#external-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        External Providers
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify Installation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -507,7 +373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
+      <a href="../getting-started/quickstart/" class="md-nav__link">
         
   
   
@@ -542,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -623,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/" class="md-nav__link">
+      <a href="../providers/" class="md-nav__link">
         
   
   
@@ -651,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/pagerduty/" class="md-nav__link">
+      <a href="../providers/pagerduty/" class="md-nav__link">
         
   
   
@@ -679,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../providers/jira/" class="md-nav__link">
+      <a href="../providers/jira/" class="md-nav__link">
         
   
   
@@ -714,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../extending/" class="md-nav__link">
+      <a href="../extending/" class="md-nav__link">
         
   
   
@@ -822,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/changelog/" class="md-nav__link">
+      <a href="../releases/changelog/" class="md-nav__link">
         
   
   
@@ -850,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.1.0/" class="md-nav__link">
+      <a href="../releases/v0.1.0/" class="md-nav__link">
         
   
   
@@ -905,55 +771,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#requirements" class="md-nav__link">
+  <a href="#enhancement-request-metadata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Requirements
+        Enhancement Request Metadata
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-the-package" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install the Package
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#import-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Import Providers
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-providers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available Providers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Available Providers">
+    <nav class="md-nav" aria-label="Enhancement Request Metadata">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#built-in-providers" class="md-nav__link">
+  <a href="#usage-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Built-in Providers
+        Usage Example
       
     </span>
   </a>
@@ -961,10 +794,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#external-providers" class="md-nav__link">
+  <a href="#provider-mapping" class="md-nav__link">
     <span class="md-ellipsis">
       
-        External Providers
+        Provider Mapping
       
     </span>
   </a>
@@ -977,10 +810,88 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-installation" class="md-nav__link">
+  <a href="#cross-repo-reference-metadata" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Installation
+        Cross-Repo Reference Metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cross-Repo Reference Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#provider-specific-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider-Specific Metadata
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Provider-Specific Metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jira
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagerduty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PagerDuty
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raw-vs-curated-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw vs. Curated Signals
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derived-metrics-not-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Derived Metrics (Not Metadata)
       
     </span>
   </a>
@@ -1007,80 +918,263 @@
   
 
 
-<h1 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h1>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Go 1.21 or later</li>
-</ul>
-<h2 id="install-the-package">Install the Package<a class="headerlink" href="#install-the-package" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/plexusone/omnisignal
-</code></pre></div>
-<h2 id="import-providers">Import Providers<a class="headerlink" href="#import-providers" title="Permanent link">&para;</a></h2>
-<p>OmniSignal uses a provider registration pattern. Import the providers you need using blank imports:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omnisignal&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="c1">// Import providers you want to use</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal/provider/pagerduty&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal/provider/jira&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">)</span>
-</code></pre></div>
-<p>Each provider registers itself automatically via <code>init()</code>.</p>
-<h2 id="available-providers">Available Providers<a class="headerlink" href="#available-providers" title="Permanent link">&para;</a></h2>
-<h3 id="built-in-providers">Built-in Providers<a class="headerlink" href="#built-in-providers" title="Permanent link">&para;</a></h3>
-<p>These providers are included in the main omnisignal module:</p>
+<h1 id="signal-metadata-conventions">Signal Metadata Conventions<a class="headerlink" href="#signal-metadata-conventions" title="Permanent link">&para;</a></h1>
+<p>This document defines the standard metadata keys for signals ingested by OmniSignal. These conventions ensure consistent data across providers and enable downstream systems (metrics engines, prioritization tools) to consume signals uniformly.</p>
+<h2 id="enhancement-request-metadata">Enhancement Request Metadata<a class="headerlink" href="#enhancement-request-metadata" title="Permanent link">&para;</a></h2>
+<p>Enhancement requests (<code>signal.TypeEnhancementRequest</code>) carry product demand signals. The following metadata keys are defined in <code>signal-spec/pkg/signal</code>:</p>
 <table>
 <thead>
 <tr>
-<th>Provider</th>
-<th>Import Path</th>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>PagerDuty</td>
-<td><code>github.com/plexusone/omnisignal/provider/pagerduty</code></td>
+<td><code>votes</code></td>
+<td><code>int</code></td>
+<td>Total vote/upvote count</td>
 </tr>
 <tr>
-<td>Jira</td>
-<td><code>github.com/plexusone/omnisignal/provider/jira</code></td>
+<td><code>subscribers</code></td>
+<td><code>int</code></td>
+<td>Number of watchers/subscribers</td>
+</tr>
+<tr>
+<td><code>organizations</code></td>
+<td><code>[]string</code></td>
+<td>Requesting organization names</td>
+</tr>
+<tr>
+<td><code>customers</code></td>
+<td><code>[]string</code></td>
+<td>Named customer identifiers</td>
+</tr>
+<tr>
+<td><code>opportunities</code></td>
+<td><code>[]string</code></td>
+<td>Linked sales opportunity IDs</td>
+</tr>
+<tr>
+<td><code>estimated_arr</code></td>
+<td><code>int64</code></td>
+<td>Estimated ARR at stake, in cents</td>
 </tr>
 </tbody>
 </table>
-<h3 id="external-providers">External Providers<a class="headerlink" href="#external-providers" title="Permanent link">&para;</a></h3>
-<p>These providers are available as separate modules:</p>
+<h3 id="usage-example">Usage Example<a class="headerlink" href="#usage-example" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/signal-spec/pkg/signal&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">sig</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">signal</span><span class="p">.</span><span class="nx">Signal</span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">Type</span><span class="p">:</span><span class="w"> </span><span class="nx">signal</span><span class="p">.</span><span class="nx">TypeEnhancementRequest</span><span class="p">,</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">Metadata</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">MetaVotes</span><span class="p">:</span><span class="w">         </span><span class="mi">42</span><span class="p">,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">MetaSubscribers</span><span class="p">:</span><span class="w">   </span><span class="mi">15</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">MetaOrganizations</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;Acme Corp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Globex&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">MetaCustomers</span><span class="p">:</span><span class="w">     </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;acme-001&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;globex-002&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">MetaOpportunities</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;OPP-2026-100&quot;</span><span class="p">},</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">MetaEstimatedARR</span><span class="p">:</span><span class="w">  </span><span class="mi">150000</span><span class="nx">_00</span><span class="p">,</span><span class="w"> </span><span class="c1">// $150,000 in cents</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="provider-mapping">Provider Mapping<a class="headerlink" href="#provider-mapping" title="Permanent link">&para;</a></h3>
+<p>Aha Ideas map to these keys as follows:</p>
 <table>
 <thead>
 <tr>
-<th>Provider</th>
-<th>Module</th>
+<th>Aha Field</th>
+<th>Metadata Key</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>New Relic</td>
-<td><code>github.com/plexusone/omni-newrelic/omnisignal</code></td>
+<td><code>votes_count</code></td>
+<td><code>votes</code></td>
+</tr>
+<tr>
+<td><code>watchers_count</code></td>
+<td><code>subscribers</code></td>
+</tr>
+<tr>
+<td><code>idea_organizations</code></td>
+<td><code>organizations</code></td>
+</tr>
+<tr>
+<td><code>idea_contacts</code></td>
+<td><code>customers</code></td>
+</tr>
+<tr>
+<td><code>linked_opportunities</code></td>
+<td><code>opportunities</code></td>
+</tr>
+<tr>
+<td>(computed from opportunity values)</td>
+<td><code>estimated_arr</code></td>
 </tr>
 </tbody>
 </table>
-<p>Install external providers separately:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/plexusone/omni-newrelic
+<h2 id="cross-repo-reference-metadata">Cross-Repo Reference Metadata<a class="headerlink" href="#cross-repo-reference-metadata" title="Permanent link">&para;</a></h2>
+<p>Signals can reference entities from other repositories using typed refs in <code>{type}:{slug}</code> format. The following keys carry these references:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>customer_ref</code></td>
+<td><code>string</code></td>
+<td>Reference to customer entity (e.g., <code>customer:acme-001</code>)</td>
+</tr>
+<tr>
+<td><code>capability_ref</code></td>
+<td><code>string</code> or <code>[]string</code></td>
+<td>Reference to product capability</td>
+</tr>
+<tr>
+<td><code>market_ref</code></td>
+<td><code>string</code></td>
+<td>Reference to market (e.g., <code>market:identity-governance</code>)</td>
+</tr>
+<tr>
+<td><code>competitor_ref</code></td>
+<td><code>string</code></td>
+<td>Reference to competitor</td>
+</tr>
+<tr>
+<td><code>analyst_report_ref</code></td>
+<td><code>string</code></td>
+<td>Reference to analyst report</td>
+</tr>
+</tbody>
+</table>
+<h3 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h3>
+<p>Use <code>ref.Validate()</code> or <code>ref.ValidateStrict()</code> from <code>signal-spec/pkg/ref</code> to validate typed references:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/signal-spec/pkg/ref&quot;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">r</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ref</span><span class="p">.</span><span class="nx">TypedRef</span><span class="p">(</span><span class="s">&quot;customer:acme-001&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">ref</span><span class="p">.</span><span class="nx">Validate</span><span class="p">(</span><span class="nx">r</span><span class="p">);</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="c1">// invalid reference</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
 </code></pre></div>
-<h2 id="verify-installation">Verify Installation<a class="headerlink" href="#verify-installation" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omnisignal&quot;</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal/provider/pagerduty&quot;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">)</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span><span class="nx">providers</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">List</span><span class="p">()</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;Registered providers: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">providers</span><span class="p">)</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="c1">// Output: Registered providers: [pagerduty]</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">}</span>
+<h2 id="provider-specific-metadata">Provider-Specific Metadata<a class="headerlink" href="#provider-specific-metadata" title="Permanent link">&para;</a></h2>
+<p>Providers may include source-specific metadata prefixed with the provider name:</p>
+<h3 id="jira">Jira<a class="headerlink" href="#jira" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>jira_issue_type</code></td>
+<td><code>string</code></td>
+<td>Issue type (Bug, Story, Task, etc.)</td>
+</tr>
+<tr>
+<td><code>jira_project</code></td>
+<td><code>string</code></td>
+<td>Project key</td>
+</tr>
+<tr>
+<td><code>jira_status</code></td>
+<td><code>string</code></td>
+<td>Issue status</td>
+</tr>
+<tr>
+<td><code>jira_priority</code></td>
+<td><code>string</code></td>
+<td>Priority name</td>
+</tr>
+<tr>
+<td><code>jira_reporter</code></td>
+<td><code>string</code></td>
+<td>Reporter display name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pagerduty">PagerDuty<a class="headerlink" href="#pagerduty" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagerduty_incident_number</code></td>
+<td><code>int</code></td>
+<td>Incident number</td>
+</tr>
+<tr>
+<td><code>pagerduty_urgency</code></td>
+<td><code>string</code></td>
+<td>Urgency level (high, low)</td>
+</tr>
+<tr>
+<td><code>pagerduty_status</code></td>
+<td><code>string</code></td>
+<td>Incident status</td>
+</tr>
+<tr>
+<td><code>pagerduty_priority</code></td>
+<td><code>any</code></td>
+<td>Priority object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="raw-vs-curated-signals">Raw vs. Curated Signals<a class="headerlink" href="#raw-vs-curated-signals" title="Permanent link">&para;</a></h2>
+<p>Signals are classified as <strong>raw</strong> or <strong>curated</strong> based on whether they need consolidation:</p>
+<table>
+<thead>
+<tr>
+<th>Classification</th>
+<th>Description</th>
+<th>Example Sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raw</strong></td>
+<td>Individual events that should be clustered</td>
+<td>Support tickets, alerts, incidents</td>
+</tr>
+<tr>
+<td><strong>Curated</strong></td>
+<td>Pre-aggregated signals that skip clustering</td>
+<td>Aha Ideas (already have votes/watchers)</td>
+</tr>
+</tbody>
+</table>
+<p>Set the <code>curated</code> metadata key to <code>true</code> for pre-consolidated signals:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">sig</span><span class="p">.</span><span class="nx">Metadata</span><span class="p">[</span><span class="s">&quot;curated&quot;</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1">// Or use the helper:</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">if</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">IsCurated</span><span class="p">(</span><span class="nx">sig</span><span class="p">.</span><span class="nx">Metadata</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="c1">// Skip clustering, map directly to canonical signal</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</code></pre></div>
+<p>Curated signals bypass the embed→cluster→summarize stages and map directly to root causes, preserving their existing aggregation (votes, watchers, customer lists).</p>
+<h2 id="derived-metrics-not-metadata">Derived Metrics (Not Metadata)<a class="headerlink" href="#derived-metrics-not-metadata" title="Permanent link">&para;</a></h2>
+<p>Computed scores like frustration, momentum, reach, and urgency are NOT stored in metadata. They live in <code>Signal.Derived</code> and are excluded from fingerprinting — identical raw input produces identical fingerprints regardless of derived values.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">sig</span><span class="p">.</span><span class="nx">Derived</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">signal</span><span class="p">.</span><span class="nx">DerivedMetrics</span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">Frustration</span><span class="p">:</span><span class="w"> </span><span class="o">&amp;</span><span class="nx">frustrationScore</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nx">Momentum</span><span class="p">:</span><span class="w">    </span><span class="o">&amp;</span><span class="nx">momentumScore</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nx">Reach</span><span class="p">:</span><span class="w">       </span><span class="o">&amp;</span><span class="nx">reachScore</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nx">Urgency</span><span class="p">:</span><span class="w">     </span><span class="o">&amp;</span><span class="nx">urgencyScore</span><span class="p">,</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nx">ComputedAt</span><span class="p">:</span><span class="w">  </span><span class="o">&amp;</span><span class="nx">computedTime</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
 </code></pre></div>
 
 
@@ -1153,10 +1247,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

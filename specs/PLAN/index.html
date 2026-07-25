@@ -10,10 +10,8 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omnisignal/releases/v0.1.0/">
+        <link rel="canonical" href="https://plexusone.github.io/omnisignal/specs/PLAN/">
       
-      
-        <link rel="prev" href="../changelog/">
       
       
       
@@ -25,7 +23,7 @@
     
     
       
-        <title>v0.1.0 - OmniSignal</title>
+        <title>OmniSignal Implementation Plan - OmniSignal</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#v010" class="md-skip">
+        <a href="#omnisignal-implementation-plan" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              v0.1.0
+              OmniSignal Implementation Plan
             
           </span>
         </div>
@@ -633,8 +631,6 @@
       
   
   
-    
-  
   
   
     
@@ -647,11 +643,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
@@ -672,7 +670,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -690,7 +688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../../releases/changelog/" class="md-nav__link">
         
   
   
@@ -715,37 +713,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    v0.1.0
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../releases/v0.1.0/" class="md-nav__link">
         
   
   
@@ -761,131 +732,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#highlights" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Highlights
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#added" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Added
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Added">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Interface
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#provider-registry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Provider Registry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pagerduty-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PagerDuty Provider
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jira-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Jira Provider
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Infrastructure
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -925,10 +771,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#highlights" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Highlights
+        Overview
       
     </span>
   </a>
@@ -936,71 +782,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#added" class="md-nav__link">
+  <a href="#current-state" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Added
+        Current State
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Added">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-interface" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Interface
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#provider-registry" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Provider Registry
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pagerduty-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PagerDuty Provider
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#jira-provider" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Jira Provider
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#phase-1-align-with-signal-spec-ir-and-harden-existing-providers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentation
+        Phase 1: Align with signal-spec IR and Harden Existing Providers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-2-enhancement-signals-and-aha-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Enhancement Signals and Aha Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-3-derived-metrics-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Derived Metrics Engine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-4-llm-consolidation-and-root-cause-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: LLM Consolidation and Root Cause Clustering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase-5-market-competitive-and-analyst-signals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 5: Market, Competitive, and Analyst Signals
       
     </span>
   </a>
@@ -1019,10 +859,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#infrastructure" class="md-nav__link">
+  <a href="#working-agreements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Infrastructure
+        Working Agreements
       
     </span>
   </a>
@@ -1049,60 +889,250 @@
   
 
 
-<h1 id="v010">v0.1.0<a class="headerlink" href="#v010" title="Permanent link">&para;</a></h1>
-<p><strong>Release Date:</strong> 2026-05-23</p>
-<h2 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Unified signal ingestion abstraction for operational intelligence following the omnillm architectural pattern</li>
-<li>Built-in thick providers for PagerDuty and Jira with SDK-based implementations</li>
-</ul>
-<h2 id="added">Added<a class="headerlink" href="#added" title="Permanent link">&para;</a></h2>
-<h3 id="core-interface">Core Interface<a class="headerlink" href="#core-interface" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Core <code>Provider</code> interface with <code>Fetch</code>, <code>Subscribe</code>, <code>Capabilities</code>, and <code>Close</code> methods</li>
-<li><code>FetchOptions</code> for filtering signals by time range, status, severity, and provider-specific filters</li>
-<li><code>SubscribeOptions</code> for real-time streaming configuration</li>
-<li><code>Capabilities</code> struct describing provider features (streaming, batch fetch, filtering, acknowledge)</li>
-<li><code>Config</code> struct with <code>APIKey</code>, <code>APISecret</code>, <code>BaseURL</code>, <code>Timeout</code>, <code>RetryMax</code>, and <code>Options</code> fields</li>
-<li>Common errors: <code>ErrNotSupported</code>, <code>ErrInvalidConfig</code>, <code>ErrAuthentication</code>, <code>ErrRateLimited</code>, <code>ErrProviderNotFound</code></li>
-</ul>
-<h3 id="provider-registry">Provider Registry<a class="headerlink" href="#provider-registry" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Provider registry with <code>Register</code>, <code>New</code>, <code>MustNew</code>, <code>List</code>, <code>IsRegistered</code>, <code>GetPriority</code> functions</li>
-<li>Priority-based registration allowing thick providers to override thin providers</li>
-<li><code>Unregister</code> and <code>ClearRegistry</code> functions for testing</li>
-</ul>
-<h3 id="pagerduty-provider">PagerDuty Provider<a class="headerlink" href="#pagerduty-provider" title="Permanent link">&para;</a></h3>
-<ul>
-<li>PagerDuty provider using official <code>go-pagerduty</code> SDK</li>
-<li>Incident fetching with pagination, time filtering, status/severity mapping</li>
-<li>Incident normalization to signal-spec <code>Signal</code> type</li>
-</ul>
-<h3 id="jira-provider">Jira Provider<a class="headerlink" href="#jira-provider" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Jira provider using <code>go-jira</code> community SDK</li>
-<li>Issue fetching via JQL with project, time, status, priority filters</li>
-<li>Issue normalization to signal-spec <code>Signal</code> type with component entities and label tags</li>
-</ul>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
-<ul>
-<li>README with overview, quick start, provider table, interface docs, and custom provider guide</li>
-<li>MkDocs documentation site with PlexusOne theme</li>
-<li>Getting started guides for installation and quickstart</li>
-<li>Configuration reference for <code>Config</code>, <code>FetchOptions</code>, <code>Capabilities</code></li>
-<li>Provider documentation for PagerDuty and Jira</li>
-<li>Custom provider implementation guide</li>
-</ul>
+<h1 id="omnisignal-implementation-plan">OmniSignal Implementation Plan<a class="headerlink" href="#omnisignal-implementation-plan" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>This plan sequences the work to evolve OmniSignal from its current state (provider interface, registry, Jira and PagerDuty adapters) into the full product signal engine described in <a href="../ARCHITECTURE/">ARCHITECTURE.md</a> and <a href="../PRD/">PRD.md</a>.</p>
+<p>Each phase builds and tests independently. Signal-spec schema changes always land before the OmniSignal code that depends on them.</p>
+<h2 id="current-state">Current State<a class="headerlink" href="#current-state" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Provider interface (<code>Fetch</code>, <code>Subscribe</code>, <code>Capabilities</code>)</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Registry with thin/thick priority</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Jira provider</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>PagerDuty provider</td>
+<td>Complete</td>
+</tr>
+<tr>
+<td>Product signal types (enhancement, competitive, analyst)</td>
+<td>Not started</td>
+</tr>
+<tr>
+<td>Derived metrics engine</td>
+<td>Not started</td>
+</tr>
+<tr>
+<td>LLM consolidation</td>
+<td>Not started</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phase-1-align-with-signal-spec-ir-and-harden-existing-providers">Phase 1: Align with signal-spec IR and Harden Existing Providers<a class="headerlink" href="#phase-1-align-with-signal-spec-ir-and-harden-existing-providers" title="Permanent link">&para;</a></h2>
+<p>Goal: existing providers fully conform to the canonical IR and pass schema validation.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schema conformance tests</td>
+<td>Validate Jira and PagerDuty output against embedded signal-spec schemas</td>
+</tr>
+<tr>
+<td>Fingerprint audit</td>
+<td>Ensure both providers generate stable, deterministic fingerprints</td>
+</tr>
+<tr>
+<td>Cross-repo reference support</td>
+<td>Populate <code>customer_ref</code> / <code>capability_ref</code> metadata from provider config mappings</td>
+</tr>
+<tr>
+<td>Sentinel error coverage</td>
+<td>Wrap all auth/rate-limit failures in the shared sentinel errors</td>
+</tr>
+<tr>
+<td>Capabilities accuracy</td>
+<td>Verify reported <code>SignalTypes</code>, batch sizes, and rate limits per provider</td>
+</tr>
+</tbody>
+</table>
+<p>Exit criteria: all provider output validates against signal-spec; <code>go test ./...</code> and <code>golangci-lint run</code> clean.</p>
+<h2 id="phase-2-enhancement-signals-and-aha-integration">Phase 2: Enhancement Signals and Aha Integration<a class="headerlink" href="#phase-2-enhancement-signals-and-aha-integration" title="Permanent link">&para;</a></h2>
+<p>Goal: ingest enhancement requests as first-class signals.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal-spec: add <code>enhancement_request</code> type</td>
+<td>New <code>signal.Type</code> plus metrics fields (votes, organizations, named customers, estimated ARR) in metadata conventions</td>
+</tr>
+<tr>
+<td>Aha adapter</td>
+<td>Lives in <code>grokify/aha-studio</code> (owns the Aha SDK and sync); implements the OmniSignal <code>Provider</code> interface and registers as <code>"aha"</code></td>
+</tr>
+<tr>
+<td>Metadata conventions doc</td>
+<td>Define standard metadata keys for enhancement signals (votes, subscribers, organizations, opportunities)</td>
+</tr>
+<tr>
+<td>Raw vs. curated distinction</td>
+<td>Aha Ideas arrive pre-consolidated; mark them so the consolidation pipeline skips clustering and maps them directly to canonical signals</td>
+</tr>
+</tbody>
+</table>
+<p>Exit criteria: Aha Ideas round-trip into valid <code>signal.Signal</code> values with vote and customer metrics preserved.</p>
+<h2 id="phase-3-derived-metrics-engine">Phase 3: Derived Metrics Engine<a class="headerlink" href="#phase-3-derived-metrics-engine" title="Permanent link">&para;</a></h2>
+<p>Goal: source-independent scoring over aggregated signals.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metrics/</code> package</td>
+<td>Formula registry with pluggable <code>Compute</code> functions</td>
+</tr>
+<tr>
+<td>Frustration score</td>
+<td>Weighted signal count x oldest age; default weights per signal source, overridable</td>
+</tr>
+<tr>
+<td>Momentum</td>
+<td>Trailing 30-day signal count</td>
+</tr>
+<tr>
+<td>Reach</td>
+<td>Distinct customer references</td>
+</tr>
+<tr>
+<td>Urgency</td>
+<td>Support case count x severity weight</td>
+</tr>
+<tr>
+<td>Config loading</td>
+<td>Per-organization weight overrides via <code>Config.Options</code> or a metrics config file</td>
+</tr>
+</tbody>
+</table>
+<p>Exit criteria: metrics computed identically for Aha-sourced and support-sourced signal groups; formulas covered by table-driven tests.</p>
+<h2 id="phase-4-llm-consolidation-and-root-cause-clustering">Phase 4: LLM Consolidation and Root Cause Clustering<a class="headerlink" href="#phase-4-llm-consolidation-and-root-cause-clustering" title="Permanent link">&para;</a></h2>
+<p>Goal: many raw signals collapse into few canonical root causes.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>consolidate/</code> package</td>
+<td>Pipeline stages: embed, cluster, summarize, review, attach</td>
+</tr>
+<tr>
+<td>Embedding via OmniLLM</td>
+<td>Populate <code>Signal.Embedding</code> through the OmniLLM provider interface</td>
+</tr>
+<tr>
+<td>Semantic clustering</td>
+<td>Similarity-threshold clustering with incremental attach for new signals</td>
+</tr>
+<tr>
+<td>Root cause drafting</td>
+<td>Generate <code>rootcause.RootCause</code> candidates with LLM summaries</td>
+</tr>
+<tr>
+<td>Evidence links</td>
+<td>Persist signal-to-root-cause membership for auditability</td>
+</tr>
+<tr>
+<td>Human review hooks</td>
+<td>Optional review queue; unreviewed root causes flagged, not blocked</td>
+</tr>
+</tbody>
+</table>
+<p>Exit criteria: a corpus of support tickets clusters into root causes whose frustration scores match Phase 3 formulas.</p>
+<h2 id="phase-5-market-competitive-and-analyst-signals">Phase 5: Market, Competitive, and Analyst Signals<a class="headerlink" href="#phase-5-market-competitive-and-analyst-signals" title="Permanent link">&para;</a></h2>
+<p>Goal: extend coverage from customer evidence to market evidence.</p>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal-spec: new types</td>
+<td><code>competitive_gap</code>, <code>competitor_launch</code>, <code>analyst_finding</code>, <code>market_observation</code></td>
+</tr>
+<tr>
+<td>MarketSpec references</td>
+<td><code>market_ref</code>, <code>competitor_ref</code>, <code>analyst_report_ref</code> metadata conventions</td>
+</tr>
+<tr>
+<td>Analyst adapter</td>
+<td>Ingest analyst findings referencing MarketSpec report entities</td>
+</tr>
+<tr>
+<td>Competitive adapter</td>
+<td>Win/loss and competitive gap signals from CRM sources</td>
+</tr>
+<tr>
+<td>PRISM-Roadmap handoff</td>
+<td>Document how each signal type maps to the CSAT / SAM-SOM / TAM pillars</td>
+</tr>
+</tbody>
+</table>
+<p>Exit criteria: one root cause can aggregate support tickets, an Aha idea, a competitive gap, and an analyst finding, each referencing canonical entities.</p>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Needed by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signal-spec type additions</td>
+<td>Phases 2, 5</td>
+</tr>
+<tr>
+<td>aha-studio adapter work</td>
+<td>Phase 2</td>
+</tr>
+<tr>
+<td>OmniLLM embedding/completion providers</td>
+<td>Phase 4</td>
+</tr>
+<tr>
+<td>MarketSpec core schemas</td>
+<td>Phase 5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="working-agreements">Working Agreements<a class="headerlink" href="#working-agreements" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>github.com/PagerDuty/go-pagerduty</code> v1.8.0 for PagerDuty SDK</li>
-<li><code>github.com/andygrunwald/go-jira</code> v1.17.0 for Jira SDK</li>
-<li><code>github.com/plexusone/signal-spec</code> v0.1.0 for canonical signal types</li>
-</ul>
-<h2 id="infrastructure">Infrastructure<a class="headerlink" href="#infrastructure" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Shared CI workflows for build, lint, and test</li>
-<li>MIT license</li>
+<li>Conventional Commits; one logical change per commit.</li>
+<li>Tests and lint pass before push; schema changes ship with regenerated <code>.schema.json</code> files.</li>
+<li>Vendor SDK versions verified against latest releases before adding to <code>go.mod</code>.</li>
 </ul>
 
 

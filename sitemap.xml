@@ -2,42 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://plexusone.github.io/omnisignal/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/configuration/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/extending/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/metadata-conventions/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/prism-roadmap-handoff/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/getting-started/installation/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/getting-started/quickstart/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/providers/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/providers/aha/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/providers/jira/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/providers/pagerduty/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/releases/changelog/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
     </url>
     <url>
          <loc>https://plexusone.github.io/omnisignal/releases/v0.1.0/</loc>
-         <lastmod>2026-05-24</lastmod>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/specs/ARCHITECTURE/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/specs/PLAN/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/specs/PRD/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/specs/ROADMAP/</loc>
+         <lastmod>2026-07-25</lastmod>
+    </url>
+    <url>
+         <loc>https://plexusone.github.io/omnisignal/specs/TRD/</loc>
+         <lastmod>2026-07-25</lastmod>
     </url>
 </urlset>
