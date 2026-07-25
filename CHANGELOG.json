@@ -7,6 +7,53 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.2.0",
+      "date": "2026-07-25",
+      "commit": "0e90905",
+      "highlights": [
+        { "description": "Metrics engine with 4 formulas: frustration, momentum, reach, and urgency" },
+        { "description": "LLM-based consolidation pipeline: embed, cluster, summarize, review, attach" },
+        { "description": "Analyst findings provider for Gartner, Forrester, and IDC" },
+        { "description": "Competitive intelligence provider for win/loss and gaps from CRM sources" },
+        { "description": "Curated signal support to skip clustering for pre-aggregated sources" },
+        { "description": "Config helpers for typed mapping options (customer, capability, market)" }
+      ],
+      "added": [
+        { "description": "`metrics` package with a formula registry (`Register`, `Get`, `Compute`, `ComputeAll`) and built-in `frustration`, `momentum`, `reach`, and `urgency` formulas", "commit": "0d57581" },
+        { "description": "`metrics.Config` with `LoadConfig`, `Merge`, and `ToOptions` helpers, plus `ConfigFromProviderOptions` for reading weights from `Config.Options[\"metrics\"]`", "commit": "0d57581" },
+        { "description": "`consolidate` package implementing a 5-stage pipeline (embed → cluster → summarize → review → attach) via `consolidate.NewPipeline`", "commit": "34e7cde" },
+        { "description": "`OmniLLMEmbedder` for batched embedding generation with configurable `TextFunc` extractors", "commit": "34e7cde" },
+        { "description": "Cosine-similarity `Clusterer` and `IncrementalClusterer` for grouping and incrementally attaching signals to clusters", "commit": "34e7cde" },
+        { "description": "`LLMSummarizer` for generating root cause titles, descriptions, and symptom patterns from signal clusters", "commit": "34e7cde" },
+        { "description": "`MemoryReviewer` human review queue with approve/reject workflow, hooks, and auto-approve threshold", "commit": "34e7cde" },
+        { "description": "`provider/analyst` package ingesting analyst findings from Gartner, Forrester, and IDC with `analyst_report_ref`, `market_ref`, and `competitor_ref` MarketSpec refs", "commit": "0158b07" },
+        { "description": "`provider/competitive` package ingesting win/loss `DealRecord` and `CompetitiveGap` data from CRM sources (Salesforce, HubSpot, Clari, Gong)", "commit": "f0ad928" },
+        { "description": "`omnisignal.IsCurated()` for detecting pre-consolidated signals that skip the clustering stage", "commit": "6e8c92f" },
+        { "description": "`Config.GetStringMap()` for typed `map[string]string` option retrieval", "commit": "6e8c92f" },
+        { "description": "`OptCustomerMappings`, `OptCapabilityMappings`, and `OptMarketMappings` well-known config option keys", "commit": "6e8c92f" }
+      ],
+      "fixed": [
+        { "description": "Updated Jira and PagerDuty providers to use the `common.SourceSystem` struct instead of a plain string, and added customer/capability mapping support via config options", "commit": "d612855" }
+      ],
+      "dependencies": [
+        { "description": "Update `github.com/plexusone/signal-spec` to v0.2.0 and remove the local `replace` directive", "commit": "b8dabfe" },
+        { "description": "Add `github.com/grokify/oscompat` for cross-platform test assertions", "commit": "ba7031e" }
+      ],
+      "documentation": [
+        { "description": "Add PRD, TRD, PLAN, ROADMAP, and ARCHITECTURE specs covering the OmniSignal signal engine design across 6 phases (28 RMIs)", "commit": "1942f4a" },
+        { "description": "Add CLAUDE.md with repo-specific contributor guidelines", "commit": "4410150" },
+        { "description": "Add metadata conventions, PRISM-Roadmap handoff guide, and Aha provider guide covering enhancement request metadata, cross-repo reference format, and curated vs. raw signal handling", "commit": "67b8ceb" },
+        { "description": "Update README shields", "commit": "12f7c3c" }
+      ],
+      "tests": [
+        { "description": "Add provider conformance, capabilities, config, error-wrapping, external provider, and signal fingerprinting tests", "commit": "c00c8ce" },
+        { "description": "Use `oscompat` for cross-platform duration assertions instead of `> 0` comparisons that can report zero on low-resolution Windows timers", "commit": "ba7031e" }
+      ],
+      "internal": [
+        { "description": "Fix `gofmt` formatting flagged by `golangci-lint`", "commit": "0e90905" }
+      ]
+    },
+    {
       "version": "v0.1.0",
       "date": "2026-05-23",
       "commit": "4dd585c",
