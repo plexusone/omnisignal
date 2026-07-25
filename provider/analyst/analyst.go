@@ -192,8 +192,8 @@ func (p *Provider) toSignal(f Finding) signal.Signal {
 	}
 
 	return signal.Signal{
-		ID:          fmt.Sprintf("analyst-%s-%s", f.Source, f.ID),
-		Type:        signal.TypeAnalystFinding,
+		ID:   fmt.Sprintf("analyst-%s-%s", f.Source, f.ID),
+		Type: signal.TypeAnalystFinding,
 		Source: common.SourceSystem{
 			Type: "analyst",
 			Name: f.Source,
