@@ -39,8 +39,9 @@ func init() {
 
 // Provider implements omnisignal.Provider for PagerDuty.
 type Provider struct {
-	client *pagerduty.Client
-	config omnisignal.Config
+	client             *pagerduty.Client
+	config             omnisignal.Config
+	capabilityMappings map[string]string
 }
 
 // NewProvider creates a new PagerDuty provider.
@@ -52,8 +53,9 @@ func NewProvider(cfg omnisignal.Config) (omnisignal.Provider, error) {
 	client := pagerduty.NewClient(cfg.APIKey)
 
 	return &Provider{
-		client: client,
-		config: cfg,
+		client:             client,
+		config:             cfg,
+		capabilityMappings: cfg.GetStringMap(omnisignal.OptCapabilityMappings),
 	}, nil
 }
 
@@ -96,7 +98,7 @@ func (p *Provider) Fetch(ctx context.Context, opts omnisignal.FetchOptions) ([]s
 
 		resp, err := p.client.ListIncidentsWithContext(ctx, listOpts)
 		if err != nil {
-			return nil, fmt.Errorf("fetching incidents: %w", err)
+			return nil, omnisignal.WrapErrorByMessage(err, "fetching incidents")
 		}
 
 		for _, incident := range resp.Incidents {
@@ -158,16 +160,22 @@ func (p *Provider) normalizeIncident(incident pagerduty.Incident) signal.Signal 
 	// Map status
 	status := mapIncidentStatus(incident.Status)
 
-	// Extract service as entity
+	// Extract service as entity, applying capability mapping
 	var entities []common.Entity
+	var capabilityRef string
 	if incident.Service.ID != "" {
-		entities = append(entities, common.Entity{
+		entity := common.Entity{
 			Type: "service",
 			Name: incident.Service.Summary,
 			Attributes: map[string]string{
 				"pagerduty_id": incident.Service.ID,
 			},
-		})
+		}
+		if ref, ok := p.capabilityMappings[incident.Service.Summary]; ok {
+			entity.Ref = ref
+			capabilityRef = ref
+		}
+		entities = append(entities, entity)
 	}
 
 	// Build domain from service
@@ -184,7 +192,18 @@ func (p *Provider) normalizeIncident(incident pagerduty.Incident) signal.Signal 
 		signalType = signal.TypeOutage
 	}
 
-	return signal.Signal{
+	metadata := map[string]any{
+		"pagerduty_incident_number": incident.IncidentNumber,
+		"pagerduty_urgency":         incident.Urgency,
+		"pagerduty_status":          incident.Status,
+		"pagerduty_priority":        incident.Priority,
+	}
+
+	if capabilityRef != "" {
+		metadata[signal.MetaCapabilityRef] = capabilityRef
+	}
+
+	sig := signal.Signal{
 		ID:     fmt.Sprintf("pd-%s", incident.ID),
 		Type:   signalType,
 		Status: status,
@@ -201,13 +220,14 @@ func (p *Provider) normalizeIncident(incident pagerduty.Incident) signal.Signal 
 		Entities:    entities,
 		ObservedAt:  observedAt,
 		ReceivedAt:  time.Now(),
-		Metadata: map[string]any{
-			"pagerduty_incident_number": incident.IncidentNumber,
-			"pagerduty_urgency":         incident.Urgency,
-			"pagerduty_status":          incident.Status,
-			"pagerduty_priority":        incident.Priority,
-		},
+		Metadata:    metadata,
 	}
+
+	if fp, err := signal.ComputeFingerprint(sig); err == nil {
+		sig.Fingerprint = fp
+	}
+
+	return sig
 }
 
 // mapUrgencyToSeverity converts PagerDuty urgency to signal-spec severity.

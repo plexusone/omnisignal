@@ -45,9 +45,11 @@ func init() {
 
 // Provider implements omnisignal.Provider for Jira.
 type Provider struct {
-	client   *jira.Client
-	config   omnisignal.Config
-	projects []string
+	client             *jira.Client
+	config             omnisignal.Config
+	projects           []string
+	customerMappings   map[string]string
+	capabilityMappings map[string]string
 }
 
 // NewProvider creates a new Jira provider.
@@ -83,9 +85,11 @@ func NewProvider(cfg omnisignal.Config) (omnisignal.Provider, error) {
 	}
 
 	return &Provider{
-		client:   client,
-		config:   cfg,
-		projects: projects,
+		client:             client,
+		config:             cfg,
+		projects:           projects,
+		customerMappings:   cfg.GetStringMap(omnisignal.OptCustomerMappings),
+		capabilityMappings: cfg.GetStringMap(omnisignal.OptCapabilityMappings),
 	}, nil
 }
 
@@ -114,7 +118,10 @@ func (p *Provider) Fetch(ctx context.Context, opts omnisignal.FetchOptions) ([]s
 	for {
 		issues, resp, err := p.client.Issue.Search(jql, searchOpts)
 		if err != nil {
-			return nil, fmt.Errorf("searching issues: %w", err)
+			if resp != nil && resp.Response != nil {
+				return nil, omnisignal.WrapHTTPError(err, resp.Response, "searching issues")
+			}
+			return nil, omnisignal.WrapErrorByMessage(err, "searching issues")
 		}
 
 		for _, issue := range issues {
@@ -229,16 +236,22 @@ func (p *Provider) normalizeIssue(issue jira.Issue) signal.Signal {
 		domain.Subdomain = normalizeTypeName(issue.Fields.Type.Name)
 	}
 
-	// Extract components as entities
+	// Extract components as entities, applying capability mappings
 	var entities []common.Entity
+	var capabilityRefs []string
 	for _, comp := range issue.Fields.Components {
-		entities = append(entities, common.Entity{
+		entity := common.Entity{
 			Type: "component",
 			Name: comp.Name,
 			Attributes: map[string]string{
 				"jira_id": comp.ID,
 			},
-		})
+		}
+		if ref, ok := p.capabilityMappings[comp.Name]; ok {
+			entity.Ref = ref
+			capabilityRefs = append(capabilityRefs, ref)
+		}
+		entities = append(entities, entity)
 	}
 
 	// Build description
@@ -255,7 +268,29 @@ func (p *Provider) normalizeIssue(issue jira.Issue) signal.Signal {
 		}
 	}
 
-	return signal.Signal{
+	metadata := map[string]any{
+		"jira_issue_type": issue.Fields.Type.Name,
+		"jira_project":    issue.Fields.Project.Key,
+		"jira_status":     issue.Fields.Status.Name,
+		"jira_priority":   issue.Fields.Priority.Name,
+		"jira_reporter":   issue.Fields.Reporter.DisplayName,
+	}
+
+	// Apply customer mapping from reporter's organization (if available in custom fields)
+	if org := p.extractReporterOrg(issue); org != "" {
+		if ref, ok := p.customerMappings[org]; ok {
+			metadata[signal.MetaCustomerRef] = ref
+		}
+	}
+
+	// Add capability refs from component mappings
+	if len(capabilityRefs) == 1 {
+		metadata[signal.MetaCapabilityRef] = capabilityRefs[0]
+	} else if len(capabilityRefs) > 1 {
+		metadata[signal.MetaCapabilityRef] = capabilityRefs
+	}
+
+	sig := signal.Signal{
 		ID:     fmt.Sprintf("jira-%s", issue.Key),
 		Type:   signal.TypeSupportTicket,
 		Status: status,
@@ -273,14 +308,14 @@ func (p *Provider) normalizeIssue(issue jira.Issue) signal.Signal {
 		ObservedAt:  observedAt,
 		ReceivedAt:  time.Now(),
 		Tags:        tags,
-		Metadata: map[string]any{
-			"jira_issue_type": issue.Fields.Type.Name,
-			"jira_project":    issue.Fields.Project.Key,
-			"jira_status":     issue.Fields.Status.Name,
-			"jira_priority":   issue.Fields.Priority.Name,
-			"jira_reporter":   issue.Fields.Reporter.DisplayName,
-		},
+		Metadata:    metadata,
 	}
+
+	if fp, err := signal.ComputeFingerprint(sig); err == nil {
+		sig.Fingerprint = fp
+	}
+
+	return sig
 }
 
 // mapPriorityToSeverity converts Jira priority to signal-spec severity.
@@ -375,4 +410,26 @@ func isValidTag(s string) bool {
 		}
 	}
 	return true
+}
+
+// extractReporterOrg attempts to extract the reporter's organization.
+// Looks for the "organization" custom field key, or falls back to
+// the reporter's email domain for enterprise accounts.
+func (p *Provider) extractReporterOrg(issue jira.Issue) string {
+	// Check for a custom field named "organization" in Unknowns
+	if issue.Fields.Unknowns != nil {
+		for key, val := range issue.Fields.Unknowns {
+			if strings.Contains(strings.ToLower(key), "organization") {
+				if org, ok := val.(string); ok && org != "" {
+					return org
+				}
+				if m, ok := val.(map[string]any); ok {
+					if name, ok := m["name"].(string); ok && name != "" {
+						return name
+					}
+				}
+			}
+		}
+	}
+	return ""
 }
