@@ -5,6 +5,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/grokify/oscompat/testutil"
 	"github.com/plexusone/omnisignal/consolidate"
 	"github.com/plexusone/signal-spec/pkg/rootcause"
 	"github.com/plexusone/signal-spec/pkg/signal"
@@ -315,9 +316,8 @@ func TestResultStats(t *testing.T) {
 		t.Fatalf("Process error: %v", err)
 	}
 
-	if result.Stats.Duration == 0 {
-		t.Error("Duration should be non-zero")
-	}
+	// On Windows, fast operations may report 0 duration due to ~15.6ms timer resolution
+	testutil.AssertDurationNonNegative(t, result.Stats.Duration)
 	if result.Stats.SignalsProcessed != 3 {
 		t.Errorf("SignalsProcessed = %d, want 3", result.Stats.SignalsProcessed)
 	}

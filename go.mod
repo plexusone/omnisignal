@@ -5,6 +5,7 @@ go 1.26.0
 require (
 	github.com/PagerDuty/go-pagerduty v1.8.0
 	github.com/andygrunwald/go-jira v1.17.0
+	github.com/grokify/oscompat v0.5.0
 	github.com/plexusone/signal-spec v0.2.0
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.2
 )
