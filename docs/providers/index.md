@@ -23,18 +23,23 @@ Thin providers use native HTTP without external SDK dependencies. They offer:
 - Smaller binary size
 - Direct control over API calls
 
+Examples: Analyst, Competitive
+
 ## Built-in Providers
 
 | Provider | Type | Import Path | Signal Types |
 |----------|------|-------------|--------------|
 | [PagerDuty](pagerduty.md) | Alerting | `omnisignal/provider/pagerduty` | alert, outage |
 | [Jira](jira.md) | Ticketing | `omnisignal/provider/jira` | support_ticket, feedback |
+| [Analyst](analyst.md) | Market Intelligence | `omnisignal/provider/analyst` | analyst_finding |
+| [Competitive](competitive.md) | Market Intelligence | `omnisignal/provider/competitive` | competitive_gap, competitor_launch |
 
 ## External Providers
 
 | Provider | Type | Module | Signal Types |
 |----------|------|--------|--------------|
 | New Relic | Monitoring | `omni-newrelic/omnisignal` | alert, metric_anomaly |
+| [Aha](aha.md) | Product Feedback | `grokify/aha-studio/omnisignal` | enhancement_request |
 
 ## Provider Registration
 
@@ -43,14 +48,16 @@ Providers register themselves automatically via `init()`:
 ```go
 import (
     "github.com/plexusone/omnisignal"
-    _ "github.com/plexusone/omnisignal/provider/pagerduty" // Registers "pagerduty"
-    _ "github.com/plexusone/omnisignal/provider/jira"      // Registers "jira"
+    _ "github.com/plexusone/omnisignal/provider/pagerduty"   // Registers "pagerduty"
+    _ "github.com/plexusone/omnisignal/provider/jira"        // Registers "jira"
+    _ "github.com/plexusone/omnisignal/provider/analyst"     // Registers "analyst"
+    _ "github.com/plexusone/omnisignal/provider/competitive" // Registers "competitive"
 )
 
 func main() {
     // List registered providers
     providers := omnisignal.List()
-    // ["jira", "pagerduty"]
+    // ["analyst", "competitive", "jira", "pagerduty"]
 
     // Check if a provider is registered
     if omnisignal.IsRegistered("pagerduty") {
