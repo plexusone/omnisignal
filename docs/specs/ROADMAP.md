@@ -2,7 +2,7 @@
 
 **Initiative:** `INIT-OMNISIGNAL-001`
 **Repository:** `github.com/plexusone/omnisignal`
-**Status:** Completed — 23 of 23 items completed
+**Status:** In progress — 23 of 24 items completed (Phase 6 in progress)
 
 > RMI IDs are stable and permanent. Commits implementing an item carry the trailer `Refs: RMI-OMNISIGNAL-NNN`. Phase status is derived from member RMIs — a phase is complete only when all its required RMIs are complete. This initiative spans two repositories: signal-spec owns the IR (`RMI-SIGNALSPEC-*`, see signal-spec's ROADMAP.md); this file covers the OmniSignal runtime. Signal-spec schema changes always land before the OmniSignal code that depends on them.
 
@@ -104,3 +104,11 @@
   - Depends on: `RMI-OMNISIGNAL-021`, `RMI-OMNISIGNAL-022`
   - Acceptance: one root cause aggregates support tickets, an Aha idea, a competitive gap, and an analyst finding, each referencing canonical entities
   - Delivered: `docs/prism-roadmap-handoff.md`
+
+## Phase 6 — Durable Signal Store
+
+**Theme:** Signals and root causes persist across runs, with vector similarity search over the corpus.
+**Status:** In progress — 0 of 1 items completed
+
+- [ ] `RMI-OMNISIGNAL-024` SQLite/Ent/sqlite-vec persistence store for `consolidate.Store`
+  - Acceptance: `store/sqlite` implements `consolidate.Store` (`SaveRootCause`, `GetRootCause`, `ListRootCauses`, `LinkSignal`, `GetLinkedSignals`) against a real SQLite file; `SaveSignal`/`GetSignal` persist full `signal.Signal` records keyed by fingerprint for idempotent ingestion; `NearestRootCauses` performs KNN via sqlite-vec; `go test ./store/sqlite/...` passes against real temp DBs; `go build`, `go vet`, and `golangci-lint` are clean across the repo
