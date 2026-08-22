@@ -2,7 +2,7 @@
 
 **Initiative:** `INIT-OMNISIGNAL-001`
 **Repository:** `github.com/plexusone/omnisignal`
-**Status:** In progress — 23 of 24 items completed (Phase 6 in progress)
+**Status:** In progress — 24 of 32 items completed
 
 > RMI IDs are stable and permanent. Commits implementing an item carry the trailer `Refs: RMI-OMNISIGNAL-NNN`. Phase status is derived from member RMIs — a phase is complete only when all its required RMIs are complete. This initiative spans two repositories: signal-spec owns the IR (`RMI-SIGNALSPEC-*`, see signal-spec's ROADMAP.md); this file covers the OmniSignal runtime. Signal-spec schema changes always land before the OmniSignal code that depends on them.
 
@@ -108,7 +108,64 @@
 ## Phase 6 — Durable Signal Store
 
 **Theme:** Signals and root causes persist across runs, with vector similarity search over the corpus.
+**Status:** Completed — 1 of 1 items completed
+
+- [x] `RMI-OMNISIGNAL-024` SQLite/Ent/sqlite-vec persistence store for `consolidate.Store`
+  - Acceptance: `store/sqlite` implements `consolidate.Store` (`SaveRootCause`, `GetRootCause`, `ListRootCauses`, `LinkSignal`, `GetLinkedSignals`) against a real SQLite file; `SaveSignal`/`GetSignal` persist full `signal.Signal` records keyed by fingerprint for idempotent ingestion; `NearestRootCauses` performs KNN via sqlite-vec; `go test ./store/sqlite/...` passes against real temp DBs; `go build`, `go vet`, and `golangci-lint` are clean across the repo
+  - Delivered: `store/sqlite` package (Ent schema, `consolidate.Store` impl, sqlite-vec KNN, test suite)
+
+## Phase 7 — Proposed Opportunity Bridge
+
+**Theme:** Turn approved root causes and curated Idea signals into scored, ranked candidate opportunities in omniroadmap.
 **Status:** In progress — 0 of 1 items completed
 
-- [ ] `RMI-OMNISIGNAL-024` SQLite/Ent/sqlite-vec persistence store for `consolidate.Store`
-  - Acceptance: `store/sqlite` implements `consolidate.Store` (`SaveRootCause`, `GetRootCause`, `ListRootCauses`, `LinkSignal`, `GetLinkedSignals`) against a real SQLite file; `SaveSignal`/`GetSignal` persist full `signal.Signal` records keyed by fingerprint for idempotent ingestion; `NearestRootCauses` performs KNN via sqlite-vec; `go test ./store/sqlite/...` passes against real temp DBs; `go build`, `go vet`, and `golangci-lint` are clean across the repo
+- [ ] `RMI-OMNISIGNAL-025` Bridge approved RootCauses and curated Idea signals into scored omniroadmap opportunities
+  - Acceptance: omniroadmap `OpportunitySpec` ent schema + `SaveOpportunitySpec`/`GetOpportunitySpec` round-trip against real Dolt; `omnisignalbridge` unit tests for both synthesizers and the spec/assessment builders; end-to-end: synthesize from one real RootCause and one real curated Idea signal, persist, and confirm both appear in `compile.Compile`'s `ReportDataset`
+  - Delivered (partial): `omniroadmap/ent/schema/opportunityspec.go`, `omniroadmap/store/opportunityspec.go`; `omniroadmap/omnisignalbridge` package in progress
+
+## Phase 8 — Additional Ticketing/Support Signal Sources
+
+**Theme:** Broaden ingestion beyond Jira/PagerDuty/Aha to the other ticketing systems named as targets early in this initiative: Zendesk, Freshservice, Salesforce Service Cloud.
+**Status:** Not started — 0 of 3 items completed
+
+- [ ] `RMI-OMNISIGNAL-026` Zendesk provider
+  - Acceptance: Zendesk tickets normalize to `signal.Signal` and validate against the embedded signal-spec schema; fingerprint tests; `Capabilities()` accurate
+- [ ] `RMI-OMNISIGNAL-027` Freshservice provider
+  - Acceptance: Freshservice tickets normalize to `signal.Signal` and validate against the embedded signal-spec schema; fingerprint tests; `Capabilities()` accurate
+- [ ] `RMI-OMNISIGNAL-028` Salesforce Service Cloud provider
+  - Acceptance: Service Cloud cases normalize to `signal.Signal` and validate against the embedded signal-spec schema; fingerprint tests; `Capabilities()` accurate
+
+## Phase 9 — Incremental Attach via Similarity Search
+
+**Theme:** Wire `store/sqlite`'s `NearestRootCauses` (built in Phase 6) into `Pipeline.Attach`'s caller, so incremental clustering uses DB-backed KNN instead of requiring the caller to hand it every existing RootCause.
+**Status:** Not started — 0 of 1 items completed
+
+- [ ] `RMI-OMNISIGNAL-029` Wire `NearestRootCauses` into an Attach-driving ingestion loop
+  - Acceptance: a new signal attaches to the correct existing RootCause (or creates a new one) using only `NearestRootCauses`-sourced candidates, verified against a corpus too large for brute-force in-memory comparison to be practical
+
+## Phase 10 — Rubric-Driven RICE/MoSCoW Scoring
+
+**Theme:** Replace the deliberately not-computable RICE / empty MoSCoW placeholder from Phase 7's bridge with real rubric-driven judgments via structured-evaluation.
+**Status:** Not started — 0 of 1 items completed
+
+- [ ] `RMI-OMNISIGNAL-030` Rubric-driven RICE/MoSCoW judgments for bridge-synthesized assessments
+  - Repo: `github.com/grokify/omniroadmap`
+  - Acceptance: a bridge-synthesized `OpportunityAssessment` gets real `ImpactAnswers`/`ConfidenceAnswers`/`MoSCoWAnswers` from a judge pass; `ComputeRICE` returns `Computable:true` with a defensible `EstimabilityGate`; ranked correctly against hand-scored assessments in `compile.Compile` output
+
+## Phase 11 — Opportunity Promotion to Real Roadmap Items
+
+**Theme:** Let a human turn an approved, ranked OpportunityAssessment into a real filed Item (Jira epic, Aha feature) instead of leaving proposals unattached to any Item forever.
+**Status:** Not started — 0 of 1 items completed
+
+- [ ] `RMI-OMNISIGNAL-031` Promote an approved OpportunityAssessment to a real filed Item
+  - Repo: `github.com/grokify/omniroadmap`
+  - Acceptance: promoting an assessment creates a real, provider-synced Item visible on a subsequent sync; `OpportunityAssessment.Opportunity.RMIID` is set and persisted; promotion is idempotent (re-running doesn't create duplicates)
+
+## Phase 12 — Agentic Code-Analysis Fix Synthesis
+
+**Theme:** Replace the fix-track's evidence-only LLM draft with an agentic step that reads the affected codebase and proposes a concrete technical fix/design, per the larger follow-on scoped (and deferred) during Phase 7.
+**Status:** Not started — 0 of 1 items completed
+
+- [ ] `RMI-OMNISIGNAL-032` Agentic codebase-aware fix synthesis
+  - Repo: `github.com/grokify/omniroadmap`
+  - Acceptance: for a RootCause tied to a known code-owning repo, the synthesizer's `SolutionProposal` cites specific files/functions and a concrete fix approach, verified against a real repo, not fabricated from evidence text alone
