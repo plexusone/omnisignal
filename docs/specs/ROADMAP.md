@@ -121,7 +121,7 @@
 
 - [ ] `RMI-OMNISIGNAL-025` Bridge approved RootCauses and curated Idea signals into scored omniroadmap opportunities
   - Acceptance: omniroadmap `OpportunitySpec` ent schema + `SaveOpportunitySpec`/`GetOpportunitySpec` round-trip against real Dolt; `omnisignalbridge` unit tests for both synthesizers and the spec/assessment builders; end-to-end: synthesize from one real RootCause and one real curated Idea signal, persist, and confirm both appear in `compile.Compile`'s `ReportDataset`
-  - Delivered (partial): `omniroadmap/ent/schema/opportunityspec.go`, `omniroadmap/store/opportunityspec.go`; `omniroadmap/omnisignalbridge` package in progress
+  - Delivered (pending live verification): `omniroadmap/ent/schema/opportunityspec.go`, `omniroadmap/store/opportunityspec.go` (+ tests, skip without a local `dolt` binary); `omniroadmap/omnisignalbridge` package (RootCauseSynthesizer, IdeaSynthesizer, BuildOpportunitySpec, BuildOpportunityAssessment, Bridge orchestration, full unit test suite passing); `omniroadmap propose root-causes`/`propose ideas` CLI commands. Not yet run: the end-to-end acceptance check (real RootCause + real curated Idea signal + real Dolt + `compile.Compile`) — blocked on a local `dolt` binary and real data, neither available in this environment.
 
 ## Phase 8 — Additional Ticketing/Support Signal Sources
 
