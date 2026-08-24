@@ -18,6 +18,7 @@ OmniSignal provides a unified interface for ingesting operational signals from v
 - **Filtering**: Time-based, status, severity, and provider-specific filters
 - **Streaming Ready**: Subscribe interface for real-time signals (provider-dependent)
 - **Type Safe**: Full Go type safety with comprehensive error handling
+- **Persistent Store**: SQLite/Ent-backed `consolidate.Store` with sqlite-vec similarity search over signal and root cause embeddings
 
 ## Quick Example
 
@@ -82,6 +83,7 @@ func main() {
 - [Quick Start](getting-started/quickstart.md) - Your first signal fetch
 - [Providers](providers/index.md) - Configure specific providers
 - [Configuration](configuration.md) - Understand configuration options
+- [Storage](storage.md) - Persist signals and root causes with the SQLite store
 
 ## Related Packages
 

@@ -362,6 +362,30 @@ result, err := pipeline.Process(ctx, signals)
 
 [Curated signals](#curated-signals) skip embedding and clustering and map directly to root causes, preserving their existing aggregation.
 
+## Persistent Store
+
+The `store/sqlite` package implements `consolidate.Store` on a local SQLite file via [Ent](https://entgo.io/), plus embedding similarity search over the persisted corpus via [sqlite-vec](https://github.com/asg017/sqlite-vec) (`modernc.org/sqlite/vec`) — both pure Go, no cgo required.
+
+```go
+import "github.com/plexusone/omnisignal/store/sqlite"
+
+st, err := sqlite.Open("omnisignal.db", sqlite.WithEmbeddingDimension(1536))
+if err != nil {
+    log.Fatal(err)
+}
+defer st.Close()
+
+pipeline := consolidate.NewPipeline(
+    consolidate.WithStore(st),
+    // ...embedder, summarizer, reviewer
+)
+
+// Corpus-scale similarity search over persisted root causes:
+neighbors, err := st.NearestRootCauses(ctx, queryEmbedding, 10)
+```
+
+See [Storage](docs/storage.md) for the full guide.
+
 ## Related Packages
 
 - [signal-spec](https://github.com/plexusone/signal-spec) - Canonical signal data model
