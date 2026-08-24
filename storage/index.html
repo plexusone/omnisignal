@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://plexusone.github.io/omnisignal/providers/aha/">
+        <link rel="canonical" href="https://plexusone.github.io/omnisignal/storage/">
       
       
-        <link rel="prev" href="../competitive/">
+        <link rel="prev" href="../providers/aha/">
       
       
-        <link rel="next" href="../../storage/">
+        <link rel="next" href="../metadata-conventions/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Aha - OmniSignal</title>
+        <title>Storage - OmniSignal</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -55,7 +55,7 @@
     
       <link rel="stylesheet" href="https://plexusone.dev/css/plexusone-mkdocs.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aha-provider" class="md-skip">
+        <a href="#persistent-store" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="OmniSignal" class="md-header__button md-logo" aria-label="OmniSignal" data-md-component="logo">
+    <a href=".." title="OmniSignal" class="md-header__button md-logo" aria-label="OmniSignal" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -121,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aha
+              Storage
             
           </span>
         </div>
@@ -238,7 +238,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="OmniSignal" class="md-nav__button md-logo" aria-label="OmniSignal" data-md-component="logo">
+    <a href=".." title="OmniSignal" class="md-nav__button md-logo" aria-label="OmniSignal" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -268,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -349,7 +349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/installation/" class="md-nav__link">
+      <a href="../getting-started/installation/" class="md-nav__link">
         
   
   
@@ -377,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/quickstart/" class="md-nav__link">
+      <a href="../getting-started/quickstart/" class="md-nav__link">
         
   
   
@@ -412,7 +412,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -436,8 +436,6 @@
       
   
   
-    
-  
   
   
     
@@ -450,11 +448,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -475,7 +475,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -493,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../providers/" class="md-nav__link">
         
   
   
@@ -521,7 +521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pagerduty/" class="md-nav__link">
+      <a href="../providers/pagerduty/" class="md-nav__link">
         
   
   
@@ -549,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../jira/" class="md-nav__link">
+      <a href="../providers/jira/" class="md-nav__link">
         
   
   
@@ -577,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../analyst/" class="md-nav__link">
+      <a href="../providers/analyst/" class="md-nav__link">
         
   
   
@@ -605,7 +605,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../competitive/" class="md-nav__link">
+      <a href="../providers/competitive/" class="md-nav__link">
         
   
   
@@ -630,6 +630,41 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../providers/aha/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aha
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -649,7 +684,7 @@
   <span class="md-ellipsis">
     
   
-    Aha
+    Storage
   
 
     
@@ -667,7 +702,7 @@
   <span class="md-ellipsis">
     
   
-    Aha
+    Storage
   
 
     
@@ -693,10 +728,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#location" class="md-nav__link">
+  <a href="#opening-a-store" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Location
+        Opening a Store
       
     </span>
   </a>
@@ -704,10 +739,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#registration" class="md-nav__link">
+  <a href="#wiring-into-the-consolidation-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registration
+        Wiring into the Consolidation Pipeline
       
     </span>
   </a>
@@ -715,10 +750,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#signal-and-root-cause-persistence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Signal and Root Cause Persistence
       
     </span>
   </a>
@@ -726,10 +761,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signal-mapping" class="md-nav__link">
+  <a href="#similarity-search" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signal Mapping
+        Similarity Search
       
     </span>
   </a>
@@ -737,32 +772,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#capabilities" class="md-nav__link">
+  <a href="#design-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capabilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raw-vs-curated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Raw vs. Curated
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Status
+        Design Notes
       
     </span>
   </a>
@@ -773,41 +786,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../storage/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Storage
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -873,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../metadata-conventions/" class="md-nav__link">
+      <a href="../metadata-conventions/" class="md-nav__link">
         
   
   
@@ -901,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../prism-roadmap-handoff/" class="md-nav__link">
+      <a href="../prism-roadmap-handoff/" class="md-nav__link">
         
   
   
@@ -936,7 +914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../extending/" class="md-nav__link">
+      <a href="../extending/" class="md-nav__link">
         
   
   
@@ -1044,7 +1022,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/changelog/" class="md-nav__link">
+      <a href="../releases/changelog/" class="md-nav__link">
         
   
   
@@ -1072,7 +1050,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.3.0/" class="md-nav__link">
+      <a href="../releases/v0.3.0/" class="md-nav__link">
         
   
   
@@ -1100,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.2.0/" class="md-nav__link">
+      <a href="../releases/v0.2.0/" class="md-nav__link">
         
   
   
@@ -1128,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/v0.1.0/" class="md-nav__link">
+      <a href="../releases/v0.1.0/" class="md-nav__link">
         
   
   
@@ -1183,10 +1161,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#location" class="md-nav__link">
+  <a href="#opening-a-store" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Location
+        Opening a Store
       
     </span>
   </a>
@@ -1194,10 +1172,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#registration" class="md-nav__link">
+  <a href="#wiring-into-the-consolidation-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registration
+        Wiring into the Consolidation Pipeline
       
     </span>
   </a>
@@ -1205,10 +1183,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration" class="md-nav__link">
+  <a href="#signal-and-root-cause-persistence" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration
+        Signal and Root Cause Persistence
       
     </span>
   </a>
@@ -1216,10 +1194,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#signal-mapping" class="md-nav__link">
+  <a href="#similarity-search" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signal Mapping
+        Similarity Search
       
     </span>
   </a>
@@ -1227,32 +1205,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#capabilities" class="md-nav__link">
+  <a href="#design-notes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Capabilities
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raw-vs-curated" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Raw vs. Curated
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#implementation-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Implementation Status
+        Design Notes
       
     </span>
   </a>
@@ -1279,150 +1235,49 @@
   
 
 
-<h1 id="aha-provider">Aha Provider<a class="headerlink" href="#aha-provider" title="Permanent link">&para;</a></h1>
-<p>The Aha provider ingests Ideas from <a href="https://www.aha.io/">Aha!</a> as enhancement request signals.</p>
-<h2 id="location">Location<a class="headerlink" href="#location" title="Permanent link">&para;</a></h2>
-<p>The Aha provider is implemented in <code>grokify/aha-studio</code>, not in omnisignal core. This keeps heavy Aha SDK dependencies out of the core module.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>github.com/grokify/aha-studio/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>└── omnisignal/
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    └── provider.go  // Implements omnisignal.Provider
+<h1 id="persistent-store">Persistent Store<a class="headerlink" href="#persistent-store" title="Permanent link">&para;</a></h1>
+<p>The <code>store/sqlite</code> package implements <a href="https://pkg.go.dev/github.com/plexusone/omnisignal/consolidate#Store"><code>consolidate.Store</code></a> on a local SQLite file via <a href="https://entgo.io/">Ent</a>, so signals and root causes survive across runs instead of living only in an in-memory batch. It adds embedding similarity search over the persisted corpus via <a href="https://github.com/asg017/sqlite-vec">sqlite-vec</a> (<code>modernc.org/sqlite/vec</code>) <code>vec0</code> virtual tables — both dependencies are pure Go, no cgo required.</p>
+<h2 id="opening-a-store">Opening a Store<a class="headerlink" href="#opening-a-store" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="s">&quot;github.com/plexusone/omnisignal/store/sqlite&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nx">st</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">sqlite</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;omnisignal.db&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nx">sqlite</span><span class="p">.</span><span class="nx">WithEmbeddingDimension</span><span class="p">(</span><span class="mi">1536</span><span class="p">),</span><span class="w"> </span><span class="c1">// required — matches your embedder&#39;s output size</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nx">sqlite</span><span class="p">.</span><span class="nx">WithDistanceMetric</span><span class="p">(</span><span class="nx">sqlite</span><span class="p">.</span><span class="nx">DistanceCosine</span><span class="p">),</span><span class="w"> </span><span class="c1">// default; also sqlite.DistanceL2</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">defer</span><span class="w"> </span><span class="nx">st</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </code></pre></div>
-<h2 id="registration">Registration<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h2>
-<p>Import the provider to auto-register:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="s">&quot;github.com/plexusone/omnisignal&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;github.com/grokify/aha-studio/omnisignal&quot;</span><span class="w"> </span><span class="c1">// Register Aha provider</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nx">provider</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;aha&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">omnisignal</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nx">BaseURL</span><span class="p">:</span><span class="w">   </span><span class="s">&quot;https://company.aha.io&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nx">APIKey</span><span class="p">:</span><span class="w">    </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getenv</span><span class="p">(</span><span class="s">&quot;AHA_API_KEY&quot;</span><span class="p">),</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="nx">Options</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="s">&quot;products&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;PROD-1&quot;</span><span class="p">},</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">})</span>
+<p><code>WithEmbeddingDimension</code> is required: the store has no way to infer the vector length your embedder produces, and <code>Open</code> returns <code>sqlite.ErrDimensionRequired</code> if it's left unset. <code>Open</code> is safe to call repeatedly against an existing, populated file — schema creation is append-only.</p>
+<h2 id="wiring-into-the-consolidation-pipeline">Wiring into the Consolidation Pipeline<a class="headerlink" href="#wiring-into-the-consolidation-pipeline" title="Permanent link">&para;</a></h2>
+<p><code>*sqlite.Store</code> implements <code>consolidate.Store</code>, so it plugs directly into a <code>consolidate.Pipeline</code> in place of an in-memory store:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nx">pipeline</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">consolidate</span><span class="p">.</span><span class="nx">NewPipeline</span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">consolidate</span><span class="p">.</span><span class="nx">WithStore</span><span class="p">(</span><span class="nx">st</span><span class="p">),</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nx">consolidate</span><span class="p">.</span><span class="nx">WithEmbedder</span><span class="p">(</span><span class="nx">embedder</span><span class="p">),</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">consolidate</span><span class="p">.</span><span class="nx">WithSummarizer</span><span class="p">(</span><span class="nx">summarizer</span><span class="p">),</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nx">consolidate</span><span class="p">.</span><span class="nx">WithReviewer</span><span class="p">(</span><span class="nx">reviewer</span><span class="p">),</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">)</span>
 </code></pre></div>
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>BaseURL</code></td>
-<td>Yes</td>
-<td>Aha instance URL (e.g., <code>https://company.aha.io</code>)</td>
-</tr>
-<tr>
-<td><code>APIKey</code></td>
-<td>Yes</td>
-<td>Aha API key</td>
-</tr>
-<tr>
-<td><code>Options["products"]</code></td>
-<td>No</td>
-<td>Filter by product IDs</td>
-</tr>
-<tr>
-<td><code>Options["statuses"]</code></td>
-<td>No</td>
-<td>Filter by idea status</td>
-</tr>
-<tr>
-<td><code>Options["customer_mappings"]</code></td>
-<td>No</td>
-<td>Map organization names to typed refs</td>
-</tr>
-<tr>
-<td><code>Options["capability_mappings"]</code></td>
-<td>No</td>
-<td>Map categories to capability refs</td>
-</tr>
-</tbody>
-</table>
-<h2 id="signal-mapping">Signal Mapping<a class="headerlink" href="#signal-mapping" title="Permanent link">&para;</a></h2>
-<p>Aha Ideas are normalized to <code>signal.TypeEnhancementRequest</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Aha Field</th>
-<th>Signal Field</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>id</code></td>
-<td><code>ID</code> (prefixed with <code>aha-</code>)</td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td><code>Summary</code></td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td><code>Description</code></td>
-</tr>
-<tr>
-<td><code>created_at</code></td>
-<td><code>ObservedAt</code></td>
-</tr>
-<tr>
-<td><code>votes_count</code></td>
-<td><code>Metadata["votes"]</code></td>
-</tr>
-<tr>
-<td><code>watchers_count</code></td>
-<td><code>Metadata["subscribers"]</code></td>
-</tr>
-<tr>
-<td><code>idea_organizations</code></td>
-<td><code>Metadata["organizations"]</code></td>
-</tr>
-<tr>
-<td><code>idea_contacts</code></td>
-<td><code>Metadata["customers"]</code></td>
-</tr>
-<tr>
-<td><code>product.id</code></td>
-<td><code>Domain.Name</code></td>
-</tr>
-<tr>
-<td><code>category</code></td>
-<td><code>Domain.Subdomain</code></td>
-</tr>
-<tr>
-<td>(derived from votes/watchers)</td>
-<td><code>Severity</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="capabilities">Capabilities<a class="headerlink" href="#capabilities" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">Capabilities</span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">SupportsStreaming</span><span class="p">:</span><span class="w">   </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">SupportsBatchFetch</span><span class="p">:</span><span class="w">  </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nx">SupportsFiltering</span><span class="p">:</span><span class="w">   </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nx">SupportsAcknowledge</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nx">MaxBatchSize</span><span class="p">:</span><span class="w">        </span><span class="mi">200</span><span class="p">,</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nx">RateLimitPerMinute</span><span class="p">:</span><span class="w">  </span><span class="mi">300</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nx">SignalTypes</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="nx">signal</span><span class="p">.</span><span class="nx">Type</span><span class="p">{</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nx">signal</span><span class="p">.</span><span class="nx">TypeEnhancementRequest</span><span class="p">,</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">}</span>
+<p>Root causes, signals, and signal-to-root-cause links persist across process restarts, and <code>Pipeline.Attach</code> can incrementally attach newly ingested signals to root causes saved in a previous run.</p>
+<h2 id="signal-and-root-cause-persistence">Signal and Root Cause Persistence<a class="headerlink" href="#signal-and-root-cause-persistence" title="Permanent link">&para;</a></h2>
+<p>Beyond the <code>consolidate.Store</code> methods, the store exposes direct signal access:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">st</span><span class="p">.</span><span class="nx">SaveSignal</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">sig</span><span class="p">)</span><span class="w">     </span><span class="c1">// upsert by Signal.ID; links to sig.RootCauseID if set</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">st</span><span class="p">.</span><span class="nx">GetSignal</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="p">)</span><span class="w">  </span><span class="c1">// RootCauseID populated from the link table, if linked</span>
 </code></pre></div>
-<h2 id="raw-vs-curated">Raw vs. Curated<a class="headerlink" href="#raw-vs-curated" title="Permanent link">&para;</a></h2>
-<p>Aha Ideas are considered "curated" signals — they've already been aggregated and voted on by users. Set the <code>curated</code> metadata key to <code>true</code> so the consolidation pipeline can skip clustering:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">Metadata</span><span class="p">:</span><span class="w"> </span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">any</span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="s">&quot;curated&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="c1">// ... other fields</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+<p><code>SaveRootCause</code> / <code>GetRootCause</code> / <code>ListRootCauses</code> / <code>LinkSignal</code> / <code>GetLinkedSignals</code> implement the <code>consolidate.Store</code> interface directly — see its <a href="https://pkg.go.dev/github.com/plexusone/omnisignal/consolidate#Store">godoc</a> for the full contract. <code>LinkSignal</code> upserts by signal ID, so re-attaching a signal to a different root cause (e.g. after a reject → re-review cycle) moves the link rather than accumulating duplicates.</p>
+<p>Embeddings are stored separately from the Ent-managed rows, in <code>signal_vec</code> and <code>rootcause_vec</code> <code>vec0</code> tables — Ent has no concept of SQLite virtual tables. A save writes the Ent row first, then the embedding; a failure partway through is safe to repair with a retried, idempotent <code>Save*</code> call rather than requiring a shared transaction across the two layers.</p>
+<h2 id="similarity-search">Similarity Search<a class="headerlink" href="#similarity-search" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">neighbors</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">st</span><span class="p">.</span><span class="nx">NearestRootCauses</span><span class="p">(</span><span class="nx">ctx</span><span class="p">,</span><span class="w"> </span><span class="nx">queryEmbedding</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="c1">// topK=10, nearest first</span>
 </code></pre></div>
-<p>See <a href="../../metadata-conventions/#derived-metrics-not-metadata">Raw vs. Curated Signals</a> for details.</p>
-<h2 id="implementation-status">Implementation Status<a class="headerlink" href="#implementation-status" title="Permanent link">&para;</a></h2>
-<p>The Aha provider is tracked in <a href="https://github.com/grokify/aha-studio/blob/main/docs/specs/ROADMAP.md">INIT-AHASTUDIO-001</a>. The omnisignal adapter work is covered by the "OmniSignal adapter" RMIs in that initiative.</p>
+<p><code>NearestRootCauses</code> runs a <code>vec0</code> KNN query using the configured <code>DistanceMetric</code> (<code>DistanceCosine</code> by default, or <code>DistanceL2</code>), then hydrates the matching root causes via Ent. This is corpus-scale similarity search that <code>consolidate.Pipeline</code>'s in-memory brute-force cosine comparison doesn't provide on its own — useful for deduplicating a candidate root cause against everything already persisted before proposing it as new.</p>
+<h2 id="design-notes">Design Notes<a class="headerlink" href="#design-notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Pure Go, no cgo</strong>: both <code>modernc.org/sqlite</code> and <code>modernc.org/sqlite/vec</code> are cgo-free, so builds don't need a C toolchain.</li>
+<li><strong>Signal↔RootCause links use a join table</strong>, not a <code>root_cause_id</code> column on <code>Signal</code> — <code>LinkSignal</code> can be called before <code>SaveSignal</code> is ever called for that signal, and a column would silently no-op the link in that ordering.</li>
+<li><strong>Fingerprint-based dedup</strong> is independent of ID-based upsert: <code>Signal.Fingerprint</code> carries its own unique index (nullable, so multiple unset fingerprints are allowed) as a content-dedup guard separate from the provider-assigned <code>ID</code>.</li>
+</ul>
+<p>See the <a href="https://pkg.go.dev/github.com/plexusone/omnisignal/store/sqlite"><code>store/sqlite</code> package</a> for full API reference.</p>
 
 
 
@@ -1494,10 +1349,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
