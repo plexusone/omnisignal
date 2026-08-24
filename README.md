@@ -31,10 +31,10 @@ Unified signal ingestion abstraction for operational intelligence.
 
 `omnisignal` provides a unified interface for ingesting operational signals from various external systems (alerting, ticketing, security, monitoring). It follows the same architectural pattern as [omnillm](https://github.com/plexusone/omnillm):
 
-• **Provider interface** defines the contract for signal sources
-• **Registry** allows dynamic provider registration
-• **Thick providers** use official SDKs (PagerDuty, Jira, New Relic)
-• **Thin providers** use native HTTP for sources without Go SDKs
+- **Provider interface** defines the contract for signal sources
+- **Registry** allows dynamic provider registration
+- **Thick providers** use official SDKs (PagerDuty, Jira, New Relic)
+- **Thin providers** use native HTTP for sources without Go SDKs
 
 ## Installation
 
