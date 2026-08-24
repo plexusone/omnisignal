@@ -7,6 +7,37 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.3.0",
+      "date": "2026-08-24",
+      "commit": "2da8202",
+      "highlights": [
+        { "description": "Durable SQLite/Ent-backed implementation of consolidate.Store, so signals and root causes survive across process runs" },
+        { "description": "sqlite-vec similarity search (NearestRootCauses) over persisted root cause embeddings, pure Go with no cgo" },
+        { "description": "Roadmap scoped to the full signals -> clustering -> proposed roadmap items vision across six new phases" }
+      ],
+      "added": [
+        { "description": "`store/sqlite` package: `Signal`, `RootCause`, and `SignalRootCauseLink` Ent schemas, with embeddings excluded and stored separately in sqlite-vec `vec0` tables", "commit": "1b0e2fa" },
+        { "description": "`sqlite.Store` implementing `consolidate.Store` (`SaveRootCause`, `GetRootCause`, `ListRootCauses`, `LinkSignal`, `GetLinkedSignals`), plus `SaveSignal`/`GetSignal` for full signal persistence", "commit": "d8fb473" },
+        { "description": "`sqlite.Store.NearestRootCauses` for embedding similarity search via sqlite-vec `vec0` KNN queries, with configurable `DistanceCosine`/`DistanceL2` metrics", "commit": "d8fb473" },
+        { "description": "`sqlite.Open` with `WithEmbeddingDimension` (required) and `WithDistanceMetric` options; safe to call repeatedly against an existing database file", "commit": "d8fb473" }
+      ],
+      "tests": [
+        { "description": "Table-driven SQLite store tests against real temp database files: round-trip save/get, list filtering, signal reattachment, fingerprint-based upsert idempotency, schema-recreate-on-reopen, and KNN ordering/topK correctness", "commit": "cb9a39e" }
+      ],
+      "documentation": [
+        { "description": "Mark Phase 6 (durable signal store) complete; add Phases 7-12 scoping the remaining gaps to the full signals -> proposed roadmap items vision (additional ticketing sources, incremental attach via similarity search, rubric-driven RICE/MoSCoW scoring, opportunity promotion, agentic fix synthesis)", "commit": "8ca3cff" },
+        { "description": "Add Phase 6 durable signal store roadmap item", "commit": "5224e78" },
+        { "description": "Update Phase 7 progress note", "commit": "2da8202" }
+      ],
+      "dependencies": [
+        { "description": "Add `entgo.io/ent` and `modernc.org/sqlite` (with `modernc.org/sqlite/vec`) for the SQLite/Ent store", "commit": "d8fb473" },
+        { "description": "Bump `github.com/santhosh-tekuri/jsonschema/v6` from 6.0.2 to 6.0.3", "commit": "45a97a6" }
+      ],
+      "internal": [
+        { "description": "Regenerate Ent client for the sqlite store schema (`go generate ./store/sqlite/ent/...`)", "commit": "8282f4e" }
+      ]
+    },
+    {
       "version": "v0.2.0",
       "date": "2026-07-25",
       "commit": "0e90905",
