@@ -6,7 +6,7 @@ require (
 	entgo.io/ent v0.14.6
 	github.com/PagerDuty/go-pagerduty v1.8.0
 	github.com/andygrunwald/go-jira v1.17.0
-	github.com/grokify/oscompat v0.6.0
+	github.com/grokify/oscompat v0.9.0
 	github.com/plexusone/signal-spec v0.2.0
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.3
 	modernc.org/sqlite v1.61.0
