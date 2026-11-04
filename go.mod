@@ -9,7 +9,7 @@ require (
 	github.com/grokify/oscompat v0.11.0
 	github.com/plexusone/signal-spec v0.2.0
 	github.com/santhosh-tekuri/jsonschema/v6 v6.0.3
-	modernc.org/sqlite v1.61.0
+	modernc.org/sqlite v1.61.1
 )
 
 require (
